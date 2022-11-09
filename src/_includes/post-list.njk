@@ -1,0 +1,21 @@
+<div class="card-container">
+<div class="card-grid">
+
+{% for post in collections.posts %}
+
+<div class="post-card">
+<div class="card-img">
+    <img src="{{post.data.image}}" alt="Click to read"/>
+</div>
+<div class="card-inner">
+    <p class="card-title">{{post.data.title}}</p>
+    <p>{{post.data.tagline}}</p>
+</div>
+<a href="{{post.url}}"><span class="card-link"></span></a>
+
+</div>
+
+{% endfor %}
+
+</div>
+</div>

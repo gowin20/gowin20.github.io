@@ -1,0 +1,18 @@
+{
+  "name": "george-owen",
+  "version": "1.0.0",
+  "description": "George Owen's blog",
+  "main": ".eleventy.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "test",
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "author": "George Owen",
+  "license": "ISC"
+}
