@@ -1,7 +1,7 @@
 ---
 title: first
 tagline: i was first! upvotes pls
-image: images/kitten.jpg
+image: kitten.jpg
 ---
 
 Yep. I really just care about the structure of this right now. Let's get the eleventy technical aspect down before beginning to write.
