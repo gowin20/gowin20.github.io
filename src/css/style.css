@@ -115,6 +115,14 @@ body {
     border-color:blue;
 }
 
+.logo-image{
+    display: block;
+
+    margin: 24px auto 24px auto;
+
+}
+
+
   /* Small devices (portrait tablets and large phones, 600px and down) */
   @media only screen and (max-width: 590px) {
     .page-spacing{width:240px;}
