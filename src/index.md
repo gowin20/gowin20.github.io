@@ -4,16 +4,12 @@ layout: root-page.njk
 templateEngineOverride: njk,md
 ---
 
-<div class="index-content">
-
 {{ quotes | random }}
 
-</div>
+## Recent posts
 
-<div class="index-content">
+{% include "recent-posts.njk" %}
 
-# Posts
+<a href="/blog">-> more posts</a>
 
-</div>
-
-{% include "post-list.njk" %}
+unobtrusive links to my socials here

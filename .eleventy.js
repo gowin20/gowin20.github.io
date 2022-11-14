@@ -10,6 +10,12 @@ module.exports = function (eleventyConfig) {
     return quoteArr.map(q => q.data.quote).filter(Boolean);
   });
 
+  eleventyConfig.addCollection("latestPosts", collectionAPI => {
+    return collectionAPI.getFilteredByTag("posts").sort(function(a,b){
+      return b.date-a.date;
+    }).slice(0,3);
+  });
+
   eleventyConfig.addFilter("randomItem",(arr)=>{
     arr.sort(() => {
       return 0.5 - Math.random();

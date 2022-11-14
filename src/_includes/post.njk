@@ -2,10 +2,16 @@
 layout: base.njk
 ---
 
-<div class="post-size">
+<header>
+    <h1>{{ title }}</h1>
+</header>
+
+<main>
+    <div class="post-size">
+
+        <article>{{ content | safe }}</article>
+
+    </div>
+</main>
 
 <a href="/"><- back</a>
-
-<article>{{ content | safe }}</article>
-
-</div>
