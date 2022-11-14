@@ -1,5 +1,7 @@
 ---
 title: Races in the world of One Piece
+tagline: What is the origin of the different races in the world of One Piece?
+image: OP-races.webp
 tags: one-piece
 ---
 

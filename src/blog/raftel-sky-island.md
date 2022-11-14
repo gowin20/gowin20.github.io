@@ -1,6 +1,7 @@
 ---
 title: Paradise's connection to the finale of One Piece
 tags: one-piece
+image: op-world-map.jpg
 ---
 
 hehe
@@ -18,38 +19,38 @@ Thriller Bark - Wano
 Sabaody, Amazon Lily, Impel Down, Marineford - final war saga
 
 
+## One Piece Arcs
 
+* Romance Dawn
+* Orangetown
+* Syrup village (elbaf)
+* Baratie
+* Arlong Park
+* Reverse Mountain
+* Whiskey Peak
+* Little Garden (elbaf)
+* Drum Island
+* Alabasta
+* Jaya
+* Skypiea
+* Long Ring Long Land
+* Water 7
+* Enies Lobby
+* Thriller Bark
+* Sabaody
+* Amazon Lily
+* Impel Down
+* Marineford
 
-Romance Dawn
-Orangetown
-Syrup village (elbaf)
-Baratie
-Arlong Park
-Reverse Mountain
-Whiskey Peak
-Little Garden (elbaf)
-Drum Island
-Alabasta
-Jaya
-Skypiea
-Long Ring Long Land
-Water 7
-Enies Lobby
-Thriller Bark
-Sabaody
-Amazon Lily
-Impel Down
-Marineford
+* Time skip (post-war)
 
-Time skip (post-war)
-
-Fishman Island (arlong)
-Punk Hazard
-Dressrossa
-Zou
-Whole Cake Island
-Wano
-Egghead
-Elbaf?
-???
-lots of little islands?
+* Fishman Island (arlong)
+* Punk Hazard
+* Dressrossa
+* Zou
+* Whole Cake Island
+* Wano
+* Egghead
+* Elbaf?
+* ???
+* lots of little islands?

@@ -1,6 +1,11 @@
 ---
 title: What will happen on Elbaf?
+image: elbaf.webp
+tagline: Post-1066 predictions about the upcoming Elbaf arc.
+tags: one-piece
 ---
+
+![elbaf](/images/elbaf.webp)
 
 This chapter revealed a lot about what's coming next in the story. We got dragon interacting with giants in Ohara, meaning he probably has a connection with Elbaf. That also ties in with Kuma's plotline and his "special race." I wouldn't be surprised if we met Dragon again on Elbaf very soon...
 
