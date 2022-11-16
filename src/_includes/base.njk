@@ -7,8 +7,14 @@
   <title>{{ title }}</title>
 </head>
 <body>
-    
-      {{content | safe}}
+    <div class="page-spacing" style="width:100%;">
+      <div class="topmatter">
+      <a href="/"><img src="/images/george-owen-komika.png" class="logo-image"/></a>
+
+      {% include "navbar.njk" %}
+      </div>
+    </div>
+    {{content | safe}}
     
 </body>
 </html>
