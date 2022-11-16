@@ -1,17 +1,27 @@
 ---
 layout: base.njk
 ---
+<div class="post-spacing">
+<!-- cool header image with logo / title here -->
+
+<a href="/"><img src="/images/george-owen-komika.png" class="logo-image"/></a>
+
+
+<div class="post-size">
 
 <header>
     <h1>{{ title }}</h1>
 </header>
 
 <main>
-    <div class="post-size">
+
 
         <article>{{ content | safe }}</article>
-
-    </div>
 </main>
 
-<a href="/"><- back</a>
+</div>
+
+<div class="nav">
+<li><a href="/blog">back</a></li>
+</div>
+</div>

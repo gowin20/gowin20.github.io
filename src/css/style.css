@@ -1,6 +1,26 @@
 body {
-    font-family: sans-serif;
-    background-color: #E0E0E0;
+    background-color: #ffffff;
+    margin:0px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    line-height:1.7;
+}
+
+.post-spacing p {
+    font-size:18px;
+    margin-bottom:25px;
+    line-height:1.7;
+}
+
+h1 {
+    font-size: 36px;
+    line-height:1.2;
+    margin: 0px 0px 30px 0px;
+    letter-spacing:-1px;
+}
+
+h2 {
+    font-size:24px;
 }
 
 .page-content {
@@ -9,15 +29,35 @@ body {
 
 .page-spacing {
     margin:auto;
+    padding:20px 0px 0px 0px
 }
+
+.post-spacing {
+    margin:auto;
+    padding:20px 0px 40px 0px;
+    height:100%;
+    background-color:#ffffff;
+    border-width: 1px;
+    border-style:none solid none solid;
+    border-color:#5e5e5e;
+    /*filter:drop-shadow(0px 1px 25px #000000);*/
+    max-width:1000px;
+}
+
+.post-size {
+    padding:0px 20px 0px 20px;
+    margin:32px auto 32px auto;
+    max-width:820px;
+}
+
+
+
 
 .index-content {
     margin-left:12px;
 }
 
-.post-size {
-    margin:auto;
-}
+
 
 .card-grid {
     display:grid;
@@ -33,7 +73,7 @@ body {
     position:relative;
     /* border */
     border-radius: 8px;
-    background-color: #d4d4d4;
+    background-color: #e0e0e0;
     /* inner contents */
     display:flex;
     flex-direction: column;
@@ -79,9 +119,26 @@ body {
 
 .card-title {
     font-size:17px;
+    line-height:24px;
     font-weight:600;
+    margin: 0px;
 }
 
+.card-description {
+    font-size:14px;
+    margin:0px;
+
+    overflow:hidden;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+}
+
+.card-category {
+    font-size:13px;
+    margin: 0px 0px 2px 0px;
+    color:#5e5e5e;
+}
 
 .nav {
     list-style-type: none;
@@ -95,6 +152,7 @@ body {
 
 .nav li {
     background-color: #e0e0e0;
+    border-radius:8px;
     margin: 0px 5px 0px 5px;
 }
 
@@ -111,35 +169,63 @@ body {
 }
 
 .nav li a:hover{
-    color:blue;
-    border-color:blue;
+    color:black;
+    border-color:black;
 }
 
 .logo-image{
     display: block;
 
-    margin: 24px auto 24px auto;
+    margin: 0px auto 24px auto;
 
 }
 
+.socials {
+    list-style-type: none;
+    margin: 30px auto 30px auto;
+    padding: 0;
+    overflow: hidden;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.socials li {
+    margin:0px 20px 0px 20px;
+}
+
+.social {
+    fill:#5e5e5e;
+}
+
+.social:hover{
+    fill:black;
+}
 
   /* Small devices (portrait tablets and large phones, 600px and down) */
   @media only screen and (max-width: 590px) {
     .page-spacing{width:240px;}
+
     .post-card {width:240px; height:268px; flex:none}
     .card-grid {grid-template-columns: auto;}
+
+    .nav {flex-direction: column;}
   }
   
   /* Medium devices (landscape tablets, 600px and up) */
   @media only screen and (min-width: 590px) {
     .page-spacing{width:534px;}
+
     .post-card {width:255px; height:263px;}
     
   } 
+
+
   
   /* Large devices (laptops/desktops, 843px and up) */
   @media only screen and (min-width: 848px) {
     .page-spacing{width:746px;}
+
     .post-card {width:232px; height:286px;}
     .card-grid {grid-template-columns: auto auto auto;}
   } 
@@ -147,6 +233,7 @@ body {
   /* Extra large devices (large laptops and desktops, 1100px and up) */
   @media only screen and (min-width: 1100px) {
     .page-spacing {width:960px;}
+
     .card-inner {height:52%;}
     .card-img {height:48%}
     .post-card {width:304px; height:302px;}
