@@ -1,8 +1,8 @@
 ---
 title: What will happen on Elbaf?
 image: elbaf.webp
-tagline: Post-1066 predictions about the upcoming Elbaf arc.
-tags: one-piece
+description: Post-1066 predictions about the upcoming Elbaf arc.
+category: One Piece
 ---
 
 ![elbaf](/images/elbaf.webp)

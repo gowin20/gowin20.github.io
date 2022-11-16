@@ -1,7 +1,9 @@
 ---
 title: Paradise's connection to the finale of One Piece
-tags: one-piece
+description: Paradise's connection to the finale of One PieceParadise's connection to the finale of One PieceParadise's connection to the finale of One PieceParadise's connection to the finale of One Piece
+category: One Piece
 image: op-world-map.jpg
+
 ---
 
 hehe

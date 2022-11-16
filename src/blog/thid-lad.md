@@ -1,6 +1,7 @@
 ---
 title: third lad
-tagline: he's here to help us test
+description: he's here to help us test
+category: testing
 image: daniel-hammock.jpg
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: first
-tagline: i was first! upvotes pls
+description: i was first! upvotes pls
+category: testing
 image: kitten.jpg
 ---
 

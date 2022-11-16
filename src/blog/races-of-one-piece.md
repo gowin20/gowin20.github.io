@@ -1,8 +1,8 @@
 ---
 title: Races in the world of One Piece
-tagline: What is the origin of the different races in the world of One Piece?
+description: What is the origin of the different races in the world of One Piece?
 image: OP-races.webp
-tags: one-piece
+category: One Piece
 ---
 
 Have you ever found it odd just how many different races are present in the world of one piece? I mean, look at them all. We've got:
