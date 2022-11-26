@@ -1,6 +1,8 @@
 ---
 title: Infinite complexity
-description: appreciating the repeating chaotic patterns that escape our comprehension
+description: appreciating the repeated chaotic patterns that escape our comprehension
+category: math
+image: test-bg.png
 ---
 
 

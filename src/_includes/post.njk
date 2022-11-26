@@ -1,23 +1,29 @@
 ---
 layout: base.njk
 ---
-<div class="post-spacing">
 
-<div class="post-size">
+<div class="org">
 
-<header>
-    <h1>{{ title }}</h1>
-</header>
+    {% include "navbar.njk" %}
 
-<main>
+    <div class="post-spacing">
+        <div class="post-size">
+
+        <header>
+            <h1>{{ title }}</h1>
+        </header>
+
+        <main>
 
 
-        <article>{{ content | safe }}</article>
-</main>
+                <article>{{ content | safe }}</article>
+        </main>
 
-</div>
+        </div>
 
-<div class="nav">
-<li><a href="/blog">back</a></li>
-</div>
+        <div class="nav">
+        <li><a href="/blog">back</a></li>
+        </div>
+    </div>
+
 </div>

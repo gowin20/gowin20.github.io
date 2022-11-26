@@ -11,7 +11,7 @@ templateEngineOverride: njk,md
 
 Check out the coolest things I've made.
 
-<a href="https://cobble.page">cobble</a>
+<a href="https://cobble.page" target="_blank">cobble</a>
 
 ## Recent posts
 

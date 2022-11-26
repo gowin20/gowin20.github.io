@@ -1,16 +1,19 @@
 ---
 layout: base.njk
 ---
-<div class="page-spacing">
+<!-- root pages have expanded vertical nav -->
+<div class="org">
 
+    {% include "navbar.njk" %}
 
-<header>
-    <h1>{{ title }}</h1>
-</header>
+    <div class="page-spacing">
+        <header>
+            <h1>{{ title }}</h1>
+        </header>
 
-{{ content | safe }}
+        {{ content | safe }}
 
+        {% include "socials.njk" %}
 
-{% include "socials.njk" %}
-
+    </div>
 </div>
