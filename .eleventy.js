@@ -1,22 +1,43 @@
 // Images
 const Image = require("@11ty/eleventy-img");
 
-async function imageShortcode(src, alt, className = undefined, widths = [400,800,1200], formats=['webp','jpeg'],sizes='100vw') {
-  if(alt === undefined) {
+const ImageWidths = {
+  ORIGINAL: null,
+  PLACEHOLDER: 24,
+};
+
+
+async function imageShortcode(
+  src, 
+  alt, 
+  className = "blog-visual",
+  widths = [400,800,1200],
+  baseFormat='jpeg',
+  optimizedFormats=['webp'],
+  sizes='25%') {
+  
+    if(alt === undefined) {
     // throw an error on missing alt (alt="" works okay)
     throw new Error(`Missing \`alt\` on myImage from: ${src}`);
   }
 
   let metadata = await Image(src, {
-    widths: [...widths,null],
-    formats: [...formats, null],
+    widths: [ImageWidths.ORIGINAL,ImageWidths.PLACEHOLDER,...widths],
+    formats: [...optimizedFormats, baseFormat],
     outputDir: "public/assets/images",
     urlPath: "/assets/images"
   });
 
+  const attributes = {
+    alt,
+    sizes,
+    loading: "lazy",
+    decoding: "async", 
+  }
   let data = metadata.jpeg[metadata.jpeg.length - 1];
-  return `<img src="${data.url}" width="${data.width}" height="${data.height}" alt="${alt}">`;
+  return `<img class="${className}" src="${data.url}" alt="${alt}" loading="lazy" decoding="async">`;
 }
+
 
 module.exports = function (eleventyConfig) {
 
