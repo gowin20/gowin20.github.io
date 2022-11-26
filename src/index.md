@@ -1,20 +1,16 @@
 ---
-title: Init
+title: index
 layout: root-page.njk
 templateEngineOverride: njk,md
 ---
 
-{{ quotes | random }}
+{% include "recent-posts.njk" %}
 
+<a href="/blog">-> more posts</a>
 
-## Highlights
 
 Check out the coolest things I've made.
 
 <a href="https://cobble.page" target="_blank">cobble</a>
 
-## Recent posts
-
-{% include "recent-posts.njk" %}
-
-<a href="/blog">-> more posts</a>
+{{ quotes | random }}

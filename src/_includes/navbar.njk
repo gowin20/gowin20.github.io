@@ -1,7 +1,37 @@
-<div class="side-nav">
-<ul class="nav">
-<li><a href="/">home</a></li>
-<li><a href="/blog">blog</a></li>
-<li><a href="/about">about</a></li>
-</ul>
+<div id="sidebar" style="width:270px;"> 
+  <div id="scroller-anchor"></div> 
+  <div id="scroller" style="margin-top:10px; width:270px"> 
+    <ul class="nav">
+        <li><div class="nav-off" id="nav-art"></div><a href="/">home</a></li>
+        <li><div class="nav-off" id="nav-art"></div><a href="/about">about</a></li>
+        <li><div class="nav-off" id="nav-art"></div><a href="/blog">blog</a></li>
+    </ul>
+  </div>
 </div>
+<script type="text/javascript">
+    function moveScroller() {
+        var $anchor = $("#scroller-anchor");
+        var $scroller = $('#scroller');
+
+        var move = function() {
+            var st = $(window).scrollTop();
+            var ot = $anchor.offset().top;
+            if(st > ot) {
+                $scroller.css({
+                    position: "fixed",
+                    top: "0px"
+                });
+            } else {
+                $scroller.css({
+                    position: "relative",
+                    top: ""
+                });
+            }
+        };
+        $(window).scroll(move);
+        move();
+    } 
+  $(function() {
+    moveScroller();
+  });
+</script> 

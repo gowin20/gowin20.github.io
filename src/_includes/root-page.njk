@@ -5,15 +5,16 @@ layout: base.njk
 <div class="org">
 
     {% include "navbar.njk" %}
+    <div class="page-border">
+        <div class="page-spacing">
+            <header>
+                <h1>{{ title }}</h1>
+            </header>
 
-    <div class="page-spacing">
-        <header>
-            <h1>{{ title }}</h1>
-        </header>
+            {{ content | safe }}
 
-        {{ content | safe }}
+            {% include "socials.njk" %}
 
-        {% include "socials.njk" %}
-
+        </div>
     </div>
 </div>
