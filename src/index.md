@@ -1,10 +1,10 @@
 ---
 title: index
-layout: root-page.njk
+layout: layouts/root-page.njk
 templateEngineOverride: njk,md
 ---
 
-{% include "recent-posts.njk" %}
+{% include "layouts/recent-posts.njk" %}
 
 <a href="/blog">-> more posts</a>
 

@@ -1,6 +1,6 @@
 ---
 title: About me
-layout: root-page.njk
+layout: layouts/root-page.njk
 ---
 
 {% image "./src/images/go-graduation-stand.jpg", "A graduation photo" %}

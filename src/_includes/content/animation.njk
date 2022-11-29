@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="/css/content/animation.css">
+
+
+<h4>loolll</h4>
+
+<svg>
+<g stroke="#000" fill="#000" fill-rule="nonzero">
+<path 
+id="line" stroke="black" fill="transparent" d="M 90 3 H 0 V 0 H 90"
+/>
+<animate xlink:href="#line" ...=""></animate>
+</g>
+</svg>
+
+<svg width="500" height="100">
+<circle id="my-circle" r="30" cx="50" cy="50" fill="orange">
+  <animate xlink:href="#my-circle" attributename="cx" from="50" to="450" dur="0.5" begin="click" fill="freeze"></animate>
+</circle>
+<rect id="test" x="0" width="50" height="50" fill="orange"/>
+<animate xlink:href="#test" attributename="x" from="0" to="64" dur="0.5" begin="click" fill="freeze"></animate>
+</svg>
+
+<svg width="192" height="128" id="iter1">
+    <g stroke="black">
+        <line id="iter1-1" x1="0" y1="64" x2="48" y2="64" />
+        <!-- segment 2 -->
+        <line id="iter1-2va" x1="48" y1="64" x2="48" y2="64" />
+        <line id="iter1-2" x1="48" y1="64" x2="96" y2="64" />
+        <line id="iter1-2vb" x1="96" y1="64" x2="96" y2="64" />
+
+        <!-- segment 2 animations -->
+        <animate xlink:href="#iter1-2va" attributename="y1" from="64" to="16" dur="0.5s" begin="iter1.click" fill="freeze"></animate>
+        <animate xlink:href="#iter1-2vb" attributename="y1" from="64" to="16" dur="0.5" begin="iter1.click" fill="freeze"></animate>
+        <animate xlink:href="#iter1-2" attributename="y1" from="64" to="16" dur="0.5" begin="iter1.click" fill="freeze"></animate>
+        <animate xlink:href="#iter1-2" attributename="y2" from="64" to="16" dur="0.5" begin="iter1.click" fill="freeze"></animate>
+
+        <!-- segment 3 -->
+        <line id="iter1-3va" x1="96" y1="64" x2="96" y2="64" />
+        <line id="iter1-3" x1="96" y1="64" x2="144" y2="64" />
+        <line id="iter1-3vb" x1="144" y1="64" x2="144" y2="64" />
+
+        <!-- segment 2 animations -->
+        <animate xlink:href="#iter1-3va" attributename="y1" from="64" to="112" dur="0.5" begin="iter1.click" fill="freeze"></animate>
+        <animate xlink:href="#iter1-3vb" attributename="y1" from="64" to="112" dur="0.5" begin="iter1.click" fill="freeze"></animate>
+        <animate xlink:href="#iter1-3" attributename="y1" from="64" to="112" dur="0.5" begin="iter1.click" fill="freeze"></animate>
+        <animate xlink:href="#iter1-3" attributename="y2" from="64" to="112" dur="0.5" begin="iter1.click" fill="freeze"></animate>
+
+        <!-- segment 4 -->
+        <line id="iter1-4" x1="144" y1="64" x2="192" y2="64" />
+    </g>
+</svg>
+
+
+
+<svg width="500" height="100">
+  <rect id="orange-circle" r="30" cx="50" width="30" height="30" fill="orange" />
+  
+  <animate 
+           xlink:href="#orange-circle"
+           attributeName="cx"
+           from="50"
+           to="450" 
+           dur="0.5"
+           begin="click"
+           fill="freeze" />
+</svg>
+

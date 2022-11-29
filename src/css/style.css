@@ -197,14 +197,21 @@ h2 {
 }
 
 .nav-off {
-    width:80px;
-    background-color:black;
+    width:60px;
+    height:44px;
+    background-image:url("/images/nav-off.png");
+    -webkit-transition: background-image 2s linear;
+    transition: background-image 2s linear;
+}
 
+.nav-on {
+    width:60px;
+    background-color: black;
 }
 
 .nav li {
     height:44px;
-    width:120px;
+    width:130px;
     background-color: #ffffff;
     border-radius:8px;
     margin: 5px 0px 5px 20px;
@@ -218,9 +225,18 @@ h2 {
     border-radius:8px;
 }
 
+.nav li span {
+    margin:0px 0px 0px 7px;
+}
+
 .nav li:hover {
-    background-color: pink;
     color:black;
+}
+
+.nav li:hover .nav-off {
+    background-image:url("/images/nav-on.png");
+    -webkit-transition: background-image 2s linear;
+    transition: background-image 2s linear;
 }
 
 

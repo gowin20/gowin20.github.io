@@ -1,7 +1,7 @@
 ---
 title: Blog
-layout: root-page.njk
+layout: layouts/root-page.njk
 templateEngineOverride: njk,md
 ---
 
-{% include "post-list.njk" %}
+{% include "layouts/post-list.njk" %}
