@@ -67,6 +67,10 @@ h2 {
     width:100px; 
     height:100px;
 }
+
+.mapSmall {
+    height:50px !important;
+}
 .cornerimg {
     width:200px;
 }
@@ -85,6 +89,32 @@ h2 {
 }
 .top-name:hover{
     color:black;
+}
+.side-name {
+    height:40px;
+    display:none;
+    color: #5e5e5e;
+    text-decoration: none;
+    margin:0px;
+    padding:10px 10px 0px 13px;
+    font-size: 23px;
+    line-height:1.2;
+    letter-spacing:-1px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:300;
+}
+.side-name-mini {
+    height:40px;
+    display:block;
+    color: #5e5e5e;
+    text-decoration: none;
+    margin:0px;
+    padding:10px 10px 0px 13px;
+    font-size: 23px;
+    line-height:1.2;
+    letter-spacing:-1px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:300;
 }
 
 .root-page {
@@ -364,6 +394,9 @@ margin:0px;
     #sidebar {
         display:none;
     }
+    .content-pane {
+        left:0
+    }
     #cornerMap {
         display:none;
     }
@@ -392,6 +425,12 @@ margin:0px;
     #sidebar {width:200px;}
     .nav-img {
         display:block
+    }
+    .side-name {
+        display:block
+    }
+    .side-name-mini{
+        display:none
     }
     #navlist li {
         width:150px;
