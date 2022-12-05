@@ -1,8 +1,8 @@
 
 <div id="sidebar">
 {% block topmatter %}
-<div id="cornerMap"></div>
-{% include "layouts/corner-map.njk" %}
+<div id="cornerMap" onclick="location.href='/'"></div>
+{% include "components/corner-map.njk" %}
 {%endblock%}
 
 {% block nav %}
@@ -25,24 +25,35 @@
 </ul>
 </div>
   <script>
-    const nav = document.getElementById("navlist");
-    const navItems = document.getElementsByClassName("navItem");
-    console.log(navItems);
     const urls = [
     "8080/$", //TODO change this to live domain extension!
     "/about",
     "/blog*"
     ]
 
-    console.log(window.location);
+    const navImg_ON = `<img src="/images/nav-on.png" alt=""/>`
+    const navImg_OFF = `<img src="/images/nav-off.png" alt=""/>`
+    const navImg_ON_H = `<img src="/images/nav-on-h.png" alt=""/>`
+    const navImg_OFF_H = `<img src="/images/nav-off-h.png" alt=""/>`
+
+    const navItems = document.getElementsByClassName("navItem");
+
     const thisUrl = String(window.location);
     for (let i=0;i<navItems.length;i++) {
+        const navImg = document.getElementById("nav-art-"+i);
+        const navItem = document.getElementById("nav-"+i);
         if (thisUrl.match(urls[i])) {
             //add img to current active
-            const navImg = document.getElementById("nav-art-"+i)
-            navImg.innerHTML=`<img src="/images/nav-on.png" alt=""/>`
-
-            document.getElementById("nav-"+i).classList.add("activeNav");
+            navImg.innerHTML= navImg_ON;       
+        }
+        else {
+            
+            navItem.addEventListener("mouseover",()=>{
+                navImg.innerHTML = navImg_OFF_H;
+            });
+            navItem.addEventListener("mouseout",()=>{
+                navImg.innerHTML = navImg_OFF;
+            });
         }
     }
     //let activePage = document.getElementByID("activeNav");

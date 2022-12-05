@@ -1,5 +1,5 @@
 body {
-    background-color: #f2f2f2;
+    background-color: #f7f7f7;
     margin:0px;
     font-family: 'Georgia', sans-serif;
     font-size: 18px;
@@ -77,14 +77,14 @@ h2 {
 
 .top-name{
     display:block;
-    color: #5e5e5e;
+    color: #616365;
     text-decoration: none;
     margin: 14px 0px;
     font-size: 60px;
     line-height:1.2;
     letter-spacing:-1px;
     font-family: 'Montserrat', sans-serif;
-    font-weight:100;
+    font-weight:300;
     overflow:hidden;
 }
 .top-name:hover{
@@ -93,7 +93,7 @@ h2 {
 .side-name {
     height:40px;
     display:none;
-    color: #5e5e5e;
+    color: #939599;
     text-decoration: none;
     margin:0px;
     padding:10px 10px 0px 13px;
@@ -127,7 +127,7 @@ h2 {
     margin:-12px 0px 0px 1px;
     width:100%;
     min-height:100%;
-    background-color:#fff;
+    background-color:#f7f7f7;
 }
 
 .content-spacing {
@@ -189,8 +189,9 @@ article pre {
     width: 296px;
     position:relative;
     /* border */
+    border-style:solid;
     border-width:1px;
-    border-color:#999999;
+    border-color:#F2F2F2;
     /* inner contents */
     display:flex;
     flex-direction: column;
@@ -198,7 +199,7 @@ article pre {
 }
 
 .post-card:hover {
-    filter:drop-shadow(0px 1px 1px #999999);
+    filter:drop-shadow(0px 1px 1px #939599);
     color:blue
 }
 
@@ -223,7 +224,7 @@ article pre {
 
     border-style:none none solid none;
     border-width:1px;
-    border-color:#999999;
+    border-color:#F2F2F2;
 }
 .card-img img {
     width:100%;
@@ -274,15 +275,14 @@ article pre {
     top:0;
     bottom:0;
     width:100px;
-    border-style:none solid none none;
-    border-color:#999999;
+    background-color: #e7e7e7;
     border-width:1px;
 }
 .content-pane {
     position:absolute;
     left:100px;
     top:0;
-    width:100%;
+    width:calc(100% - 100px);
     min-height:100%;
 }
 
@@ -317,7 +317,6 @@ margin:0px;
 #navlist li {
     height:44px;
     width:75px;
-    background-color: #f2f2f2;
     border-radius:8px;
     margin: 12px 0px 12px 12.5px;
     display:flex;
@@ -367,7 +366,7 @@ margin:0px;
 
 
 .caption {
-    color:#999999;
+    color:#939599;
     font-size:16px;
 }
 
@@ -421,6 +420,7 @@ margin:0px;
     .content-pane {
         position:absolute;
         left:200px;
+        width:calc(100% - 200px);
     }
     #sidebar {width:200px;}
     .nav-img {

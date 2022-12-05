@@ -1,7 +1,7 @@
 ---
 title: test
-layout: layouts/root-page.njk
+layout: layouts/index.njk
 templateEngineOverride: njk,md
 ---
 
-{% include "layouts/post-list.njk" %}
+{% include "components/recent-posts.njk" %}

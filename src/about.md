@@ -2,7 +2,7 @@
 layout: layouts/about.njk
 ---
 
-{% include "layouts/socials.njk" %}
+{% include "components/socials.njk" %}
 
 {% image "./src/images/go-graduation-stand.jpg", "A graduation photo" %}
 

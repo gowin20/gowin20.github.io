@@ -4,4 +4,4 @@ layout: layouts/root-page.njk
 templateEngineOverride: njk,md
 ---
 
-{% include "layouts/post-list.njk" %}
+{% include "components/post-list.njk" %}
