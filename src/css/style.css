@@ -48,7 +48,7 @@ h2 {
 
 .post-title {
     display:block;
-    margin:11.75px 0px 11.75px 0px;
+    margin:39px 0px 0px 0px;
     font-size:45px;
     letter-spacing:-1px;
     font-weight:400;
@@ -153,7 +153,7 @@ h2 {
 }
 
 .post-content {
-    margin:36px 0px 0px 0px;
+    margin:20px 0px 0px 0px;
 }
 
 article pre {
@@ -179,7 +179,13 @@ article pre {
 .card-grid {
     display:grid;
     grid-template-columns: auto auto;
-    gap:24px;
+    gap:24px; 
+}
+
+.recent-grid {
+    display:grid;
+    grid-template-columns: auto auto;
+    gap:10px;
 }
 
 .post-card {
@@ -373,10 +379,7 @@ margin:0px;
   /* Small devices (portrait tablets and large phones, 600px and down) */
   @media only screen and (max-width: 590px) {
 
-    .post-card {width:240px; height:268px; flex:none}
-    .card-grid {grid-template-columns: auto;width:240px;}
 
-    .navlist {flex-direction: column;}
   }
   
   /* Medium devices (landscape tablets, 600px and up) */
@@ -409,6 +412,12 @@ margin:0px;
         padding:20px 20px 40px 20px;
         width:100%;
     }
+
+    .post-card {width:240px; height:268px; flex:none}
+    .card-grid {grid-template-columns: auto;width:240px;}
+    .recent-grid {grid-template-columns: auto;}
+
+    .navlist {flex-direction: column;}
   }
   
   /* Large devices (laptops/desktops, 843px and up) */
@@ -417,6 +426,10 @@ margin:0px;
 
     .post-card {width:232px; height:286px;}
     .card-grid {grid-template-columns: auto auto auto;}
+    .recent-grid {
+        grid-template-columns: auto auto;
+        gap:200px;
+    }
     .content-pane {
         position:absolute;
         left:200px;

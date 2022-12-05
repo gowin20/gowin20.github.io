@@ -1,9 +1,34 @@
-<div class="card-grid">
+<div class="recent-grid">
 
 {%- for post in collections.latestPosts -%}
 
-{% include "components/post-card.njk" %}
+{% include "components/card-buffer.njk" %}
 
 {%- endfor -%}
 
-</div>
+</div> 
+
+
+<script>
+
+const buffers = document.getElementsByClassName("post-buffer");
+console.log(buffers);
+
+Array.from(buffers).forEach(buffer => {
+    let randomPadding = "";
+
+    //top padding
+    randomPadding+= Math.round((Math.random()*70)+10) + "px ";
+
+
+
+    randomPadding += "0px 0px "
+    
+    //bottom padding
+    randomPadding+= Math.round((Math.random()*70)+10) + "px ";
+    console.log(randomPadding)
+
+    buffer.style.padding = randomPadding;
+})
+
+</script>
