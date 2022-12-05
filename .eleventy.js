@@ -6,6 +6,9 @@ const ImageWidths = {
   PLACEHOLDER: 24,
 };
 
+async function captionShortcode (text) {
+  return `<em class="caption">${text}</em>`;
+}
 
 async function imageShortcode(
   src, 
@@ -45,12 +48,19 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/css/");
   eleventyConfig.addPassthroughCopy("./src/images");
   eleventyConfig.addWatchTarget("./src/images/");
+  eleventyConfig.addPassthroughCopy("./src/content");
+  eleventyConfig.addWatchTarget("./src/content/");
   eleventyConfig.addPassthroughCopy("./src/scripts");
   eleventyConfig.addWatchTarget("./src/scripts/");
 
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
   eleventyConfig.addLiquidShortcode("image", imageShortcode);
   eleventyConfig.addJavaScriptFunction("image", imageShortcode);
+
+
+  eleventyConfig.addNunjucksAsyncShortcode("caption", captionShortcode);
+  eleventyConfig.addLiquidShortcode("caption", captionShortcode);
+  eleventyConfig.addJavaScriptFunction("caption", captionShortcode);
 
   eleventyConfig.addCollection("quotes", collectionAPI => {
     const quoteArr = collectionAPI.getFilteredByGlob("./src/blog/*.md");

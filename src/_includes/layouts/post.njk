@@ -1,23 +1,22 @@
----
-layout: layouts/base.njk
----
+{%extends "layouts/base.njk" %}
 
-<div class="post-spacing">
+{%block content%}
+<div class="post-bg">
+<div class="content-spacing">
     <div class="post-size">
 
-    <header>
-        <h1>{{ title }}</h1>
+    <header class="post-title">
+        {{ title }}
     </header>
 
-    <main>
-
-
+    <main class="post-content">
             <article>{{ content | safe }}</article>
     </main>
 
     </div>
 
-    <div class="nav">
-    <li><a href="/blog">back</a></li>
-    </div>
+    <a href="/blog" class="backButton"><- back</a>
+
 </div>
+</div>
+{%endblock%}

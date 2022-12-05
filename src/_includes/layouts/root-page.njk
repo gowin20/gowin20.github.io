@@ -1,16 +1,18 @@
----
-layout: layouts/base.njk
----
-<!-- root pages have expanded vertical nav -->
+{%extends "layouts/base.njk"%}
 
-    <div class="page-border">
-        <div class="page-spacing">
-            <header>
-                <h1>{{ title }}</h1>
-            </header>
+{%block content %}
+<div class="content-spacing">
+    <a href="/" class="top-name">GEORGE OWEN</a>
+    
+    <div class="root-page">
+        {%block header %}
+        <header>
+            <h1>{{ title }}</h1>
+        </header>
+        {%endblock%}
 
-            {{ content | safe }}
-            {% include "layouts/socials.njk" %}
-        </div>
+        {{ content | safe }}
+
     </div>
 </div>
+{%endblock%}
