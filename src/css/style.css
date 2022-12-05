@@ -134,8 +134,7 @@ h2 {
     margin:0px auto auto 0px;
     padding:0px 20px 40px 40px;
     min-height:100vh;
-    border-width: 1px;
-    border-color:#999999;
+
     max-width:1000px;
     width:calc(100% - 100px);
 }
@@ -202,10 +201,10 @@ article pre {
     display:flex;
     flex-direction: column;
     background-color: #fff;
+    filter:drop-shadow(0px 1px 1px #939599);
 }
 
 .post-card:hover {
-    filter:drop-shadow(0px 1px 1px #939599);
     color:blue
 }
 
@@ -288,7 +287,7 @@ article pre {
     position:absolute;
     left:100px;
     top:0;
-    width:calc(100% - 100px);
+    width:calc(100% - 105px);
     min-height:100%;
 }
 
@@ -397,7 +396,10 @@ margin:0px;
         display:none;
     }
     .content-pane {
-        left:0
+        position:absolute;
+        left:0;
+        right:0;
+        width:100vw;
     }
     #cornerMap {
         display:none;
@@ -410,7 +412,6 @@ margin:0px;
     }
     .content-spacing {
         padding:20px 20px 40px 20px;
-        width:100%;
     }
 
     .post-card {width:240px; height:268px; flex:none}
@@ -433,7 +434,7 @@ margin:0px;
     .content-pane {
         position:absolute;
         left:200px;
-        width:calc(100% - 200px);
+        width:calc(100% - 205px);
     }
     #sidebar {width:200px;}
     .nav-img {
@@ -450,10 +451,10 @@ margin:0px;
         margin: 12px 0px 12px 25px;
     }
     #navlist li:hover {
-        text-decoration: none;
+        text-decoration: underline;
     }
     .activeNav {
-        text-decoration:none !important;
+        text-decoration:underline !important;
     }
     #cornerMap {
         width:200px;

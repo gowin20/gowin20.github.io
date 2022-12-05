@@ -3,3 +3,6 @@ node_modules
 
 # build artefacts
 public
+
+#local files like related psds, not stored in github
+local
