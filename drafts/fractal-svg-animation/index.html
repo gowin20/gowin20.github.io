@@ -1,0 +1,60 @@
+<ol>
+<li>
+<p>The end goal</p>
+</li>
+<li>
+<p>SVG animation basics</p>
+</li>
+<li>
+<p>Creating an animation by hand</p>
+</li>
+</ol>
+<link rel="stylesheet" href="/css/content/animation.css">
+<svg width="192" height="128" id="iter1">
+    <g stroke="black">
+        <line id="iter1-1" x1="0" y1="64" x2="48" y2="64" />
+        <!-- segment 2 -->
+        <line id="iter1-2va" x1="48" y1="64" x2="48" y2="64" />
+        <line id="iter1-2" x1="48" y1="64" x2="96" y2="64" />
+        <line id="iter1-2vb" x1="96" y1="64" x2="96" y2="64" />
+        <!-- segment 2 animations -->
+        <animate xlink:href="#iter1-2va" attributename="y1" from="64" to="16" dur="0.5s" begin="iter1.click" fill="freeze"></animate>
+        <animate xlink:href="#iter1-2vb" attributename="y1" from="64" to="16" dur="0.5" begin="iter1.click" fill="freeze"></animate>
+        <animate xlink:href="#iter1-2" attributename="y1" from="64" to="16" dur="0.5" begin="iter1.click" fill="freeze"></animate>
+        <animate xlink:href="#iter1-2" attributename="y2" from="64" to="16" dur="0.5" begin="iter1.click" fill="freeze"></animate>
+        <!-- segment 3 -->
+        <line id="iter1-3va" x1="96" y1="64" x2="96" y2="64" />
+        <line id="iter1-3" x1="96" y1="64" x2="144" y2="64" />
+        <line id="iter1-3vb" x1="144" y1="64" x2="144" y2="64" />
+        <!-- segment 2 animations -->
+        <animate xlink:href="#iter1-3va" attributename="y1" from="64" to="112" dur="0.5" begin="iter1.click" fill="freeze"></animate>
+        <animate xlink:href="#iter1-3vb" attributename="y1" from="64" to="112" dur="0.5" begin="iter1.click" fill="freeze"></animate>
+        <animate xlink:href="#iter1-3" attributename="y1" from="64" to="112" dur="0.5" begin="iter1.click" fill="freeze"></animate>
+        <animate xlink:href="#iter1-3" attributename="y2" from="64" to="112" dur="0.5" begin="iter1.click" fill="freeze"></animate>
+        <!-- segment 4 -->
+        <line id="iter1-4" x1="144" y1="64" x2="192" y2="64" />
+    </g>
+</svg>
+<p><em class="caption">click the line!</em></p>
+<h2>Creating an svg programmatically</h2>
+<p>In order to create fractals of any desired depth, we need to generate the HTML comprising the fractal programmatically. Let's start by making a basic program that creates the fractal we just made and saves it to a new file.</p>
+<h3>Create an SVG file</h3>
+<pre><code class="language-js">    function makeMinkowski(iter) {
+        let svg = `&lt;svg width=&quot;192&quot; height=&quot;128&quot; id=&quot;iter1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;&gt;&lt;/svg&gt;`
+
+        saveToFile(svg,iter)
+    }
+
+    makeMinkowski(1)
+</code></pre>
+<ol start="5">
+<li>Recursion, baby!</li>
+</ol>
+<p>ID names</p>
+<p>ID format: <code>#1234</code></p>
+<ul>
+<li>each chacter at the index gives the component piece a direction for that iteration. based on the iteration number, they will move a specified distance</li>
+</ul>
+<p>events that fire after each iteration</p>
+<img class="blog-visual" src="/assets/images/SayhTcDWpa-1200.jpeg" alt="Minkowski sausage fractal, depth 5" loading="lazy" decoding="async">
+<p>bet</p>
