@@ -4,13 +4,24 @@ layout: layouts/about.njk
 
 {% include "components/socials.njk" %}
 
+<div class="about-content">
+
 {% image "./src/images/go-graduation-stand.jpg", "A graduation photo" %}
 
+<div class="about-text">
 <header class="post-title">about me</header>
 
-Hi! My name is George Owen. I'm a programmer and writer passionate about the physical world we live in. I value creativity and spontaneity
 
-horizontal images: a logistic map zoomed in
+Hi! My name is George Owen. I'm a programmer, author, and artist passionate about reality.
 
-finding stable points in a world of chaos
+You can find me making websites, writing technical documentation, analyzing stories, or drawing on post-it notes.
+
+</div>
+
+</div>
+
+
+
+
+
 

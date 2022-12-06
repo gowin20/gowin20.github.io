@@ -159,7 +159,7 @@ article pre {
     overflow:auto;
     border-radius:4px;
     padding:25px 15px;
-    background-color: #f7f7f7;
+    background-color: #e7e7e7;
 }
 
 .backButton {
@@ -173,6 +173,9 @@ article pre {
     margin-left:12px;
 }
 
+.about-content {
+    display:block;
+}
 
 
 .card-grid {
@@ -185,6 +188,10 @@ article pre {
     display:grid;
     grid-template-columns: auto auto;
     gap:10px;
+}
+
+.post-buffer {
+    position:absolute;
 }
 
 .post-card {
@@ -424,7 +431,11 @@ margin:0px;
   /* Large devices (laptops/desktops, 843px and up) */
   @media only screen and (min-width: 1000px) {
     .root-page{width:746px;}
-
+    .about-content{    display:flex;
+        flex-direction: row;}
+    .about-text {
+        margin: 0px 0px 0px 24px;
+    }
     .post-card {width:232px; height:286px;}
     .card-grid {grid-template-columns: auto auto auto;}
     .recent-grid {

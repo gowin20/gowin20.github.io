@@ -7,7 +7,8 @@ image: sausage-5-filled.svg
 ---
 
 ## basics of SVG drawing
-- basics of svg drawing: `<path>`, `H`, `V` lines
+
+- explain how to use `<path>`, `H`, `V` lines
 
 ## generate SVG files
 
