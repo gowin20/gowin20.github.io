@@ -12,7 +12,7 @@ description: Learn how to programmatically create an animated SVG
 
 1. Creating an animation by hand
 
-{% include "content/fractal-svg/iter1.njk" %}
+<img src="/images/iter1.svt" alt=""/>
 
 {% caption "click the line!" %}
 

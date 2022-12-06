@@ -1,4 +1,5 @@
 ---
+title: about me
 layout: layouts/about.njk
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: test
+title: George Owen
 layout: layouts/index.njk
 templateEngineOverride: njk,md
 ---
