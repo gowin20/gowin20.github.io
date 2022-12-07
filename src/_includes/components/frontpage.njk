@@ -1,11 +1,37 @@
+{%- for item in collections.featured -%}
+
+{% include "components/primary-card.njk" %}
+
+{%-endfor-%}
+
 {%- for post in collections.latestPosts -%}
 
-{% include "components/post-random.njk" %}
+{% include "components/card-buffer.njk" %}
 
 {%- endfor -%}
 
 
 <script>
+    const paddings = [
+        {
+            wide:[70,754] //top, left
+        },
+        {
+            wide:[543,553]
+        },
+        {
+            wide:[500,79]
+        }
+    ]
+    const buffers = document.getElementsByClassName("post-buffer");
+    let i=0;
+    for (const buffer of buffers) {
+        buffer.style.top = paddings[i].wide[0]+"px";
+        buffer.style.left = paddings[i].wide[1]+"px";
+        i++;
+    }
+    // add event listener to listen for window resizes
+    /*
     const buffers = document.getElementsByClassName("post-buffer");
     function elementsOverlap(el1, el2) {
         const domRect1 = el1.getBoundingClientRect();
@@ -35,5 +61,5 @@
         buffer.style.top = topDist;
         } while (touchesOthers(buffer));
     })
-
+    */
 </script>

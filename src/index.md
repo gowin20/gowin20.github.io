@@ -4,4 +4,4 @@ layout: layouts/index.njk
 templateEngineOverride: njk,md
 ---
 
-{% include "components/recent-posts.njk" %}
+{% include "components/frontpage.njk" %}
