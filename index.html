@@ -61,13 +61,13 @@ crossorigin=""/>
         <div class="nav-img" id="nav-art-0"><img src="/images/nav-off.svg" alt=""/></div>
         <span>home</span>
     </li>
-    <li onclick="location.href='/about';" style="cursor: pointer;" class="navItem" id="nav-1">
-        <div class="nav-img" id="nav-art-1"><img src="/images/nav-off.svg" alt=""/></div>
-        <span>about</span>
-    </li>
     <li onclick="location.href='/blog';" style="cursor: pointer;" class="navItem" id="nav-2">
         <div class="nav-img" id="nav-art-2"><img src="/images/nav-off.svg" alt=""/></div>
         <span>blog</span>
+    </li>
+        <li onclick="location.href='/about';" style="cursor: pointer;" class="navItem" id="nav-1">
+        <div class="nav-img" id="nav-art-1"><img src="/images/nav-off.svg" alt=""/></div>
+        <span>about</span>
     </li>
 </ul>
 </div>
@@ -126,43 +126,68 @@ crossorigin=""/>
     <div class="root-page">
         
 
-        <div class="post-buffer">
+        <div class="primary-card" >
+    <div class="primary-card-img">
+        <img src="/images/cobble-square.png" alt=""/>
+    </div>
+    <a href="/show/cobble/"><span class="card-link"></span></a>
+</div><div class="post-buffer">
 <div class="post-card">
-    <div class="card-img">
-        <img src="/images/kitten.jpg" alt="Click to read"/>
-    </div>
     <div class="card-inner">
-        <p class="card-title">first</p>
-        <p class="card-description">i was first! upvotes pls</p>
-        <p class="card-category"># testing</p>
+        <p class="card-title">Photographing art</p>
+        <!--p class="card-description">taking pictures of all the post-it notes i have</p-->
+        <p class="card-category"># </p>
     </div>
-    <a href="/blog/first-post/"><span class="card-link"></span></a>
+    <div class="post-card-img">
+        <img src="/images/notes-1/notes-1-suction-design-2.jpg" alt="Click to read"/>
+    </div>
+    <a href="/blog/notes-1/"><span class="card-link"></span></a>
 </div>
 </div><div class="post-buffer">
 <div class="post-card">
-    <div class="card-img">
-        <img src="/images/sausage-5-filled.svg" alt="Click to read"/>
+    <div class="card-inner">
+        <p class="card-title">Optimizing Java&#39;s GC for mid-sized minecraft servers</p>
+        <!--p class="card-description">my experience hosting an ubuntu linux server for the Enigma SMP</p-->
+        <p class="card-category"># sysadmin</p>
     </div>
+    <div class="post-card-img">
+        <img src="/images/java-gc/jstat-heap.png" alt="Click to read"/>
+    </div>
+    <a href="/blog/minecraft-javagc/"><span class="card-link"></span></a>
+</div>
+</div><div class="post-buffer">
+<div class="post-card">
     <div class="card-inner">
         <p class="card-title">Generate fractal SVGs</p>
-        <p class="card-description">Recusrively generate quadratic koch curves using Javascript</p>
+        <!--p class="card-description">Recusrively generate quadratic koch curves using Javascript</p-->
         <p class="card-category"># frontend</p>
+    </div>
+    <div class="post-card-img">
+        <img src="/images/sausage-5-filled.svg" alt="Click to read"/>
     </div>
     <a href="/blog/fractal-svg/"><span class="card-link"></span></a>
 </div>
-</div><div class="post-buffer">
-<div class="post-card">
-    <div class="card-img">
-        <img src="/images/test-bg.png" alt="Click to read"/>
-    </div>
-    <div class="card-inner">
-        <p class="card-title">Infinite complexity</p>
-        <p class="card-description">appreciating the repeated chaotic patterns that escape our comprehension</p>
-        <p class="card-category"># math</p>
-    </div>
-    <a href="/blog/infinite-complexity/"><span class="card-link"></span></a>
-</div>
 </div><script>
+    const paddings = [
+        {
+            wide:[70,754] //top, left
+        },
+        {
+            wide:[543,553]
+        },
+        {
+            wide:[500,79]
+        }
+    ]
+    const buffers = document.getElementsByClassName("post-buffer");
+    let i=0;
+    for (const buffer of buffers) {
+        buffer.style.top = paddings[i].wide[0]+"px";
+        buffer.style.left = paddings[i].wide[1]+"px";
+        i++;
+    }
+    // add event listener to listen for window resizes
+    /*
     const buffers = document.getElementsByClassName("post-buffer");
     function elementsOverlap(el1, el2) {
         const domRect1 = el1.getBoundingClientRect();
@@ -192,6 +217,7 @@ crossorigin=""/>
         buffer.style.top = topDist;
         } while (touchesOthers(buffer));
     })
+    */
 </script>
 
     </div>
