@@ -3,7 +3,7 @@ title: Paradise's connection to the finale of One Piece
 description: Paradise's connection to the finale of One PieceParadise's connection to the finale of One PieceParadise's connection to the finale of One PieceParadise's connection to the finale of One Piece
 category: One Piece
 image: op-world-map.jpg
-
+date: 2022-11-13
 ---
 
 hehe

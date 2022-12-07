@@ -3,6 +3,7 @@ title: first
 description: i was first! upvotes pls
 category: testing
 image: kitten.jpg
+date: 2022-10-13
 ---
 
 Yep. I really just care about the structure of this right now. Let's get the eleventy technical aspect down before beginning to write.

@@ -4,6 +4,7 @@ tags: tutorial, math
 category: frontend
 description: Recusrively generate quadratic koch curves using Javascript
 image: sausage-5-filled.svg
+date: 2022-12-04
 ---
 
 ## basics of SVG drawing
