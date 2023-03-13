@@ -67,7 +67,7 @@ const fractalInfo = {
             maxDepth:8
         },
         maple: {
-            name:"Mandel",
+            name:"Maple",
             base:"line",
             shape:"maple",
             maxDepth:6
