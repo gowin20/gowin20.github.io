@@ -66,12 +66,6 @@ function drawFractal(type, maxDepth) {
 
 }
 
-// draws a line based on the current heading and step size
-function drawSegment(size,depth,max) {
-
-  
-}
-
 function drawPattern(size,depth,max) {
     let section = ``;
     //creates eight segments - a single fractal unit
@@ -122,5 +116,5 @@ function svgBBox (svgEl) {
     let bb = tempEl.getBBox()
     document.body.removeChild(tempDiv)
     return bb
-  }
+}
 
