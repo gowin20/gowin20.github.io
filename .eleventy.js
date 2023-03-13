@@ -43,7 +43,7 @@ async function imageShortcode(
 
 
 module.exports = function (eleventyConfig) {
-
+  eleventyConfig.addPassthroughCopy("./src/CNAME");
   eleventyConfig.addPassthroughCopy("./src/css");
   eleventyConfig.addWatchTarget("./src/css/");
   eleventyConfig.addPassthroughCopy("./src/images");
@@ -87,5 +87,6 @@ module.exports = function (eleventyConfig) {
       output: "public",
       markdownTemplateEngine: "md"
     },
+    cname: 'geowen.dev'
   };
 };
