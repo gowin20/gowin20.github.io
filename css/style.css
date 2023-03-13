@@ -245,7 +245,11 @@ article pre {
 
 .post-card-img {
     width:100%;
-    height: 37%;
+    height: 100%;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: -1;
     
     display:flex;
     justify-content: center;
@@ -264,14 +268,17 @@ article pre {
 }
 
 .card-inner {
-    height: 63%;
+    position:absolute;
+    bottom:0;
+
     padding:12px 16px;
     border-radius: 0px 0px 8px 8px;
+    background:linear-gradient(to top, rgba(255,255,255,1),rgba(255,255,255,0));
 }
 
 .card-title {
     font-family: 'Montserrat', sans-serif;
-    font-size:17px;
+    font-size:24px;
     line-height:24px;
     font-weight:600;
     margin: 0px;
@@ -439,7 +446,7 @@ margin:0px;
         padding:20px 20px 40px 20px;
     }
 
-    .post-card {width:240px; height:268px; flex:none}
+    /*.post-card {width:240px; height:268px; flex:none}*/
     .card-grid {grid-template-columns: auto;width:240px;}
     .recent-grid {grid-template-columns: auto;}
 
@@ -454,7 +461,7 @@ margin:0px;
     .about-text {
         margin: 0px 0px 0px 24px;
     }
-    .post-card {width:232px; height:286px;}
+    post-card {width:232px; height:286px;}
     .card-grid {grid-template-columns: auto auto auto;}
     .recent-grid {
         grid-template-columns: auto auto;
@@ -498,8 +505,7 @@ margin:0px;
   @media only screen and (min-width: 1224px) {
     .root-page {width:960px;}
 
-    .card-inner {height:20%;}
-    .post-card-img {height:72%}
+
     .post-card {width:304px; height:302px;}
 
     .card-description {

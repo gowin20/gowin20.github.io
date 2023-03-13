@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fractal SVG Generator</title>
+
+    <style>
+        html, body, .flex {
+            width: 100%;
+            height:100%;
+            padding:0px;
+            margin:0px;
+            font-family:sans-serif;
+        }
+        .flex {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #result {
+            width:100%;
+            height:100%;
+            margin-top:35px;
+        }
+        svg {
+            max-height:85vh;
+        }
+
+        .nav {
+            position:absolute;
+            top:0px;
+            left:0px;
+            width:145px;
+            height:30px;
+
+            font-family:'Montserrat', sans-serif;
+            font-weight:500;
+            font-size:20px;
+            color:#000;
+
+            background-color:#cecece;
+            border-style:none solid solid none;
+            border-width:2px;
+            padding:2px 1px 1px 2px;
+
+            cursor:pointer;
+        }
+
+        .tool-button {
+            position:absolute;
+            top:0px;
+            height:30px;
+            width:30px;
+            background-color:#cecece;
+            border-style:none solid solid solid;
+            border-width:2px;
+            padding:2px 1px 1px 1px;
+        }
+        .tool-button:hover {
+            background-color:#aaa;
+            cursor:pointer;
+        }
+
+        #hidden-window {
+            left:155px;
+            display:none;
+        }
+        #download-svg {
+            left:195px;
+            display:none;
+        }
+
+        #control {
+            position:absolute;
+            width:400px;
+            top:40px;
+            left:5px;
+            background-color: #cecece;
+            border-style:solid;
+            border-width:2px;
+
+
+            display:flex;
+            flex-direction: column;
+
+            font-size:20px;
+            justify-content: center;
+            padding:0px;
+            margin:auto;
+        }
+        #control .contents {
+            padding:0px 10px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        #control-header {
+            cursor: move;
+            background-color: #aaa;
+            height:30px;
+            display:flex;
+            flex-direction: row;
+        }
+
+        .drag-icon {
+            margin-right:auto;
+            padding:2px;
+        }
+
+        #hide-icon {
+            margin-left: auto;
+            padding:2px 5px 2px 5px;
+        }
+        #hide-icon:hover {
+            background-color:#888;
+            cursor:pointer;
+        }
+
+        button {
+            width:100%;
+        }
+        select, input {
+            font-size:20px;
+        }
+        .dim {
+            margin: 10px 0px;
+        }
+
+
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <script type="module">
+        
+        import { generateSVG } from "/scripts/fractal-svg/fractal-line.js"
+        import * as patterns from "/scripts/fractal-svg/patterns.js"
+
+        // Set up control functionality
+        const control = document.getElementById("control");
+
+        // Hide / Show window
+        const hideButton = document.getElementById("hide-icon");
+        const showButton = document.getElementById("hidden-window");
+
+        hideButton.addEventListener("click", e => {
+            control.style.display = "none";
+            showButton.style.display = "block";
+
+            // TODO add button css transisiton
+        })
+
+        showButton.addEventListener("click", e=>{
+            control.style.display = "block";
+            showButton.style.display = "none";
+        })
+
+        // Window Drag
+        const header = document.getElementById("control-header");
+        let x1, x2, y1, y2;
+        header.onmousedown = mouseDown;
+
+        function mouseDown(e) {
+            x1 = e.clientX;
+            y1 = e.clientY;
+            document.onmouseup = stopDrag;
+            document.onmousemove = dragElement;
+        }
+
+        function dragElement(e) {
+            x2 = x1 - e.clientX;
+            y2 = y1 - e.clientY;
+
+            x1 = e.clientX;
+            y1 = e.clientY;
+
+            control.style.top = (control.offsetTop - y2) + "px";
+            control.style.left = (control.offsetLeft - x2) + "px";
+        }
+
+        function stopDrag() {
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+
+        // Populate pattern selector
+        const patternSelect = document.getElementById("pattern")
+
+        Object.keys(patterns.default.options).forEach(value => {
+            let opt = document.createElement("option");
+
+            opt.setAttribute("value",value);
+            opt.innerHTML = patterns.default.options[value].name;
+            patternSelect.appendChild(opt)
+        })
+
+        // Initialize depth slider
+        const depthSlider = document.getElementById("depth");
+        const depthDisplay = document.getElementById("depthNumber")
+
+
+        depthDisplay.innerHTML = document.getElementById("depth").value
+        // update value dynamically
+
+        
+        depthSlider.addEventListener("input", e => {
+            depthDisplay.innerHTML = e.target.value;
+        })
+        
+        // Set max slider value
+        patternSelect.addEventListener("input", e => {
+            const maxDepth = patterns.default.options[e.target.value].maxDepth;
+
+            if (depthSlider.value > maxDepth) {
+                depthSlider.value = maxDepth;
+                depthDisplay.innerHTML = maxDepth;
+            }
+
+            depthSlider.setAttribute("max",maxDepth);
+
+        })
+
+        let fractal,depth;
+
+        document.getElementById("generate").addEventListener("click",() => {
+
+            document.getElementById("download-svg").style.display = "block";
+
+            const result = document.getElementById('result');
+            result.innerHTML = "";
+     
+            fractal = patternSelect.value;
+            depth = depthSlider.value;
+            const outline = document.getElementById('outline').value;
+            const fill = document.getElementById('fill').value;
+            
+            generateSVG(fractal,depth,outline,fill,result);
+        })
+
+        // Download SVG file
+        document.getElementById("download-svg").addEventListener("click", () => {
+            const svg = result.innerHTML;
+
+
+            const base64doc = btoa(unescape(encodeURIComponent(svg)));
+            console.log(svg)
+            console.log(base64doc)
+            const a = document.createElement('a');
+
+            
+            a.download = fractal + '-d' + depth;
+            a.href = 'data:image/svg+xml;base64,' + base64doc;
+
+            const e = new MouseEvent('click');
+            a.dispatchEvent(e);
+        })
+    </script>
+</head>
+<body>
+    <div class="nav" onclick="location.href='https\:\/\/geowen.dev/';">George Owen</div>
+    <div class="tool-button" id="hidden-window">
+        <svg fill="#000" style="display:block; margin:auto;" xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" viewBox="0 0 512 512">
+            <title>Show controls</title>
+            <path  d="M472,48H40.335a24.027,24.027,0,0,0-24,24V456a24.027,24.027,0,0,0,24,24H472a24.027,24.027,0,0,0,24-24V72A24.027,24.027,0,0,0,472,48Zm-8,32v71.981L48.335,151.49V80ZM48.335,448V183.49L464,183.981V448Z" class="ci-primary"/>
+        </svg>
+    </div>
+    <div class="tool-button" id="download-svg">
+        <svg fill="#000" style="display:block; margin:auto;" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 20 20">
+            <title>Download SVG</title>
+            <path d="M17 12v5H3v-5H1v5a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5z"/>
+            <path d="M10 15l5-6h-4V1H9v8H5l5 6z"/>
+          </svg>
+    </div>
+    <div id="control">
+        <div id="control-header">
+            <div class="drag-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="#444" stroke="#444" class="svg-icon" style="width: 1em; height: 1em;vertical-align: middle;overflow: hidden;" viewBox="0 0 1025 1024" version="1.1"><path d="M585.074876 232.47085h-73.618434 237.427243L511.120686 0.743459 275.188355 232.47085h163.800816v216.122744H218.149858v143.479602h220.839313v216.906175h146.085705V592.073196h219.120563V448.593594h-219.120563V232.47085z m-73.906225 790.04115l219.983936-213.532629H292.91146l218.257191 213.524635zM0.740049 519.478017l217.409809 216.07478V305.113993L0.740049 519.478017z m803.45539-214.364024V735.544803l219.120564-216.07478-219.120564-214.364024z"/>
+                <title>Drag me</title>
+                </svg>
+            </div>
+            <div id="hide-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" stroke="#444" class="svg-icon" style="width: 1em; height: 1em;vertical-align: middle;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1"><path d="M960 544H64a32 32 0 1 1 0-64h896a32 32 0 1 1 0 64"/>
+                <title>Hide controls</title>
+                </svg>
+            </div>
+        </div>
+        <div class="contents">
+            <div class="dim">
+                <label for="pattern">Pattern:</label>
+                <select name="pattern" id="pattern" style="padding:5px;">
+                </select>
+            </div>
+            <div class="flex">
+                <div class="dim">
+                    <label for="color">Outline:</label>
+                    <input type="color" id="outline" value="#000000">
+                </div>
+                <div class="dim" style="margin-left:10px;">
+                    <label for="color">Fill:</label>
+                    <input type="color" id="fill" value="#ffffff">
+                </div>
+            </div>
+
+            <div class="dim">
+                <label for="depth">Depth:</label>
+                <input type="range" id="depth" min="1" max="6" step="1" value="1">
+                <span id="depthNumber">1</span>
+            </div>
+            <br>
+            <button class="dim" id="generate">Generate!</button>
+        </div>
+    </div>
+    <div id="result"></div>         
+</body>
+</html>
