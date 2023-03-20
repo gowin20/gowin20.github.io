@@ -7,8 +7,6 @@ image: minkowski-cover.png
 date: 2023-03-19
 ---
 
-{% image "./src/images/fractal-svg/square150-d3.svg", "Fractal SVG!" %}
-
 I love fractals. I see them in everything, and I've spent way too much time watching [Mandelbrot Fractal Zoom](https://www.youtube.com/watch?v=LhOSM6uCWxk) videos on Youtube. It's only natural that I figured out how to generate them programmatically as soon as I learned about SVG Paths.
 
 I created a simple [Fractal SVG Generator](/fractal-svg) that recursively creates self-similar images following a set pattern. 
