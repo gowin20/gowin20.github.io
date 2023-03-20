@@ -18,7 +18,6 @@
         <div id="sidebar">
 
 
-<div id="cornerMap"></div>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
 integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
 crossorigin=""/>
@@ -27,20 +26,22 @@ crossorigin=""/>
     crossorigin=""></script>
 
 <!-- Load Esri Leaflet from CDN -->
+<div id="cornerMap"></div>
 <script src="https://unpkg.com/esri-leaflet@^3.0.8/dist/esri-leaflet.js"></script>
 <script src="https://unpkg.com/esri-leaflet-vector@4.0.0/dist/esri-leaflet-vector.js"></script>
 <script>
-    const lat = (Math.random() *0.2) +33.8557
-    const long = (Math.random()*0.5) -118.0595
-    //34.0557, -118.2595
+
+    //34.04523, -118.25701
+    const lat = (Math.random() *0.04) + 34.04523
+    const long = (Math.random() *0.04) + -118.25701
+
     var map = new L.Map("cornerMap", {
         center: new L.LatLng(lat, long),
-        zoom: 10,
+        zoom:13,
+        minZoom:13,
+        maxZoom:13,
         zoomControl:false,
-        attributionControl:false,
         dragging:false,
-        minZoom:10,
-        maxZoom:10
     });
 
     const apiKey = "AAPK4bcb23df38f348258205214f35ff7fd3DlCWuDcMvn7vEz4lrQM0U6uXU8RrOpHkWwNWC_4uaK_zh8GDHbfGo4h47UT2I0-U";
@@ -49,6 +50,8 @@ crossorigin=""/>
     L.esri.Vector.vectorBasemapLayer(itemID, {
         apiKey: apiKey
     }).addTo(map);
+
+    document.getElementsByClassName( 'leaflet-control-attribution' )[0].style.display = 'none';
 </script>
 
 
