@@ -1,0 +1,121 @@
+<p>This article is out of date. It will be hidden as soon as I implement hiding functionality.</p>
+<h2>basics of SVG drawing</h2>
+<ul>
+<li>explain how to use <code>&lt;path&gt;</code>, <code>H</code>, <code>V</code> lines</li>
+</ul>
+<h2>generate SVG files</h2>
+<pre><code>  const fs = require('fs');
+
+  function saveToFile(svg,depth) {
+      fs.writeFile(&quot;minkowski-sausage-&quot;+&quot;-&quot;+depth+&quot;.svg&quot;,svg,function (err){
+          if (err) throw err;
+      });
+  }
+</code></pre>
+<pre><code>  let svg = `&lt;svg width=&quot;${width}&quot; height=&quot;${width}&quot; id=&quot;iter1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;&gt;&lt;g&gt;&lt;path d=&quot;${path}&quot; fill=&quot;${fill}&quot; stroke=&quot;black&quot;/&gt;&lt;/g&gt;&lt;/svg&gt;`
+  saveToFile(svg,depth)
+</code></pre>
+<h2>encode the pattern</h2>
+<pre><code>  turns:[
+      turnLeft,
+      turnRight,
+      turnRight,
+      straight,
+      turnLeft,
+      turnLeft,
+      turnRight
+      ]
+</code></pre>
+<h2>handle different directions</h2>
+<pre><code>let heading = &quot;+x&quot;;
+
+// makes a 90deg left turn
+const turnLeft = () =&gt; {
+    switch (heading) {
+      case &quot;+x&quot;:
+        heading = &quot;-y&quot;;
+        break;
+      case &quot;-y&quot;:
+        heading = &quot;-x&quot;;
+        break;
+      case &quot;-x&quot;:
+        heading = &quot;+y&quot;;
+        break;
+      case &quot;+y&quot;:
+        heading = &quot;+x&quot;;
+        break;
+    }
+}
+
+// makes a 90deg right turn
+const turnRight = () =&gt; {
+  switch (heading) {
+    case &quot;+x&quot;:
+      heading = &quot;+y&quot;;
+      break;
+    case &quot;+y&quot;:
+      heading = &quot;-x&quot;;
+      break;
+    case &quot;-x&quot;:
+      heading = &quot;-y&quot;;
+      break;
+    case &quot;-y&quot;:
+      heading = &quot;+x&quot;;
+      break;
+  }
+}
+
+const straight = () =&gt; {return;}
+
+</code></pre>
+<h2>generate the pattern</h2>
+<p>function to draw the pattern
+<code>drawSegment</code> just draws a line segment for now hehe</p>
+<pre><code>    function drawPattern(size,depth,max) {
+        let section = ``;
+        //creates eight segments - a single fractal unit
+        pattern.turns.forEach(turn =&gt; {
+        section += drawSegment(size,depth,max);
+        turn();
+        })
+        section += drawSegment(size,depth,max);
+        return section;
+    }
+</code></pre>
+<p><code>drawsegment</code> draws a line based on the current heading</p>
+<pre><code>    // draws a line based on the current heading and step size
+    function drawSegment(size,depth,max) {
+        let line = ``
+        switch (heading) {
+        case &quot;+x&quot;:
+            line += `h ${size} `;
+            break;
+        case &quot;+y&quot;:
+            line += `v ${size} `;
+            break;
+        case &quot;-x&quot;:
+            line += `h -${size} `;
+            break;
+        case &quot;-y&quot;:
+            line += `v -${size} `;
+            break;
+        }
+        return line
+    } 
+    }
+</code></pre>
+<h2>apply mutual recursion</h2>
+<p>call <code>drawPattern</code> within <code>drawSegment</code></p>
+<pre><code>    function drawSegment(size,depth,max) {
+    if (depth &lt; max) {
+        return drawPattern(size/pattern.scale,depth+1,max)
+    }
+
+    // ... code hidden for clarity ...
+    }
+</code></pre>
+<p>easy!</p>
+<h2>make some fractals!</h2>
+<pre><code>makeMinkowski()
+
+</code></pre>
