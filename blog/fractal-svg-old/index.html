@@ -9,13 +9,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">  
   <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 
-  <title>blog</title>
+  <title>Generate fractal SVGs</title>
 
 </head>
 <body>
 <div class="org">
     
-        <div id="sidebar">
+<div id="sidebar">
 
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
@@ -53,6 +53,8 @@ crossorigin=""/>
 
     document.getElementsByClassName( 'leaflet-control-attribution' )[0].style.display = 'none';
 </script>
+<div onclick="location.href='/blog'" class="side-name">GEORGE OWEN</div>
+<div onclick="location.href='/blog'" class="side-name-mini">OWEN</div>
 
 
 
@@ -120,103 +122,148 @@ crossorigin=""/>
 
 
 </div>
-    
+
     <div class="content-pane">
     
+<div class="post-bg">
 <div class="content-spacing">
-    <a href="/" class="top-name">GEORGE OWEN</a>
-    
-    <div class="root-page">
-        
-        <header>
-            <h1>blog</h1>
-        </header>
-        
+    <div class="post-size">
 
-        <div class="card-grid"><div class="post-card">
-    <div class="card-inner">
-        <p class="card-title">Fractal SVGs</p>
-        <!--p class="card-description">Recusrively generate fractals using Javascript</p-->
-        <p class="card-category"># frontend</p>
-    </div> 
-    <div class="post-card-img">
-        <img src="/images/minkowski-cover.png" alt="Click to read"/>
-    </div>
-    <a href="/blog/fractal-svg/"><span class="card-link"></span></a>
-</div><div class="post-card">
-    <div class="card-inner">
-        <p class="card-title">Puzzle for Shreya</p>
-        <!--p class="card-description">A crossword puzzle I created for my girlfriend</p-->
-        <p class="card-category"># projects</p>
-    </div> 
-    <div class="post-card-img">
-        <img src="/images/crossword-puzzle.png" alt="Click to read"/>
-    </div>
-    <a href="/blog/shreya-puzzle/"><span class="card-link"></span></a>
-</div><div class="post-card">
-    <div class="card-inner">
-        <p class="card-title">Photographing art</p>
-        <!--p class="card-description">taking pictures of all the post-it notes i have</p-->
-        <p class="card-category"># </p>
-    </div> 
-    <div class="post-card-img">
-        <img src="/images/notes-1/notes-1-suction-design-2.jpg" alt="Click to read"/>
-    </div>
-    <a href="/blog/notes-1/"><span class="card-link"></span></a>
-</div><div class="post-card">
-    <div class="card-inner">
-        <p class="card-title">Optimizing Java&#39;s GC for mid-sized minecraft servers</p>
-        <!--p class="card-description">my experience hosting an ubuntu linux server for the Enigma SMP</p-->
-        <p class="card-category"># sysadmin</p>
-    </div> 
-    <div class="post-card-img">
-        <img src="/images/java-gc/jstat-heap.png" alt="Click to read"/>
-    </div>
-    <a href="/blog/minecraft-javagc/"><span class="card-link"></span></a>
-</div><div class="post-card">
-    <div class="card-inner">
-        <p class="card-title">Generate fractal SVGs</p>
-        <!--p class="card-description">Recusrively generate quadratic koch curves using Javascript</p-->
-        <p class="card-category"># frontend</p>
-    </div> 
-    <div class="post-card-img">
-        <img src="/images/sausage-5-filled.svg" alt="Click to read"/>
-    </div>
-    <a href="/blog/fractal-svg-old/"><span class="card-link"></span></a>
-</div><div class="post-card">
-    <div class="card-inner">
-        <p class="card-title">Infinite complexity</p>
-        <!--p class="card-description">appreciating the repeated chaotic patterns that escape our comprehension</p-->
-        <p class="card-category"># math</p>
-    </div> 
-    <div class="post-card-img">
-        <img src="/images/test-bg.png" alt="Click to read"/>
-    </div>
-    <a href="/blog/infinite-complexity/"><span class="card-link"></span></a>
-</div><div class="post-card">
-    <div class="card-inner">
-        <p class="card-title">What will happen on Elbaf?</p>
-        <!--p class="card-description">Post-1066 predictions about the upcoming Elbaf arc.</p-->
-        <p class="card-category"># One Piece</p>
-    </div> 
-    <div class="post-card-img">
-        <img src="/images/elbaf.webp" alt="Click to read"/>
-    </div>
-    <a href="/blog/what-is-elbaf/"><span class="card-link"></span></a>
-</div><div class="post-card">
-    <div class="card-inner">
-        <p class="card-title">Races in the world of One Piece</p>
-        <!--p class="card-description">What is the origin of the different races in the world of One Piece?</p-->
-        <p class="card-category"># One Piece</p>
-    </div> 
-    <div class="post-card-img">
-        <img src="/images/OP-races.webp" alt="Click to read"/>
-    </div>
-    <a href="/blog/races-of-one-piece/"><span class="card-link"></span></a>
-</div></div>
+    <header class="post-title">
+        Generate fractal SVGs
+    </header>
+    Sun Dec 04 2022 00:00:00 GMT+0000 (Coordinated Universal Time)
 
+    <main class="post-content">
+            <article><p>This article is out of date. It will be hidden as soon as I implement hiding functionality.</p>
+<h2>basics of SVG drawing</h2>
+<ul>
+<li>explain how to use <code>&lt;path&gt;</code>, <code>H</code>, <code>V</code> lines</li>
+</ul>
+<h2>generate SVG files</h2>
+<pre><code>  const fs = require('fs');
+
+  function saveToFile(svg,depth) {
+      fs.writeFile(&quot;minkowski-sausage-&quot;+&quot;-&quot;+depth+&quot;.svg&quot;,svg,function (err){
+          if (err) throw err;
+      });
+  }
+</code></pre>
+<pre><code>  let svg = `&lt;svg width=&quot;${width}&quot; height=&quot;${width}&quot; id=&quot;iter1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;&gt;&lt;g&gt;&lt;path d=&quot;${path}&quot; fill=&quot;${fill}&quot; stroke=&quot;black&quot;/&gt;&lt;/g&gt;&lt;/svg&gt;`
+  saveToFile(svg,depth)
+</code></pre>
+<h2>encode the pattern</h2>
+<pre><code>  turns:[
+      turnLeft,
+      turnRight,
+      turnRight,
+      straight,
+      turnLeft,
+      turnLeft,
+      turnRight
+      ]
+</code></pre>
+<h2>handle different directions</h2>
+<pre><code>let heading = &quot;+x&quot;;
+
+// makes a 90deg left turn
+const turnLeft = () =&gt; {
+    switch (heading) {
+      case &quot;+x&quot;:
+        heading = &quot;-y&quot;;
+        break;
+      case &quot;-y&quot;:
+        heading = &quot;-x&quot;;
+        break;
+      case &quot;-x&quot;:
+        heading = &quot;+y&quot;;
+        break;
+      case &quot;+y&quot;:
+        heading = &quot;+x&quot;;
+        break;
+    }
+}
+
+// makes a 90deg right turn
+const turnRight = () =&gt; {
+  switch (heading) {
+    case &quot;+x&quot;:
+      heading = &quot;+y&quot;;
+      break;
+    case &quot;+y&quot;:
+      heading = &quot;-x&quot;;
+      break;
+    case &quot;-x&quot;:
+      heading = &quot;-y&quot;;
+      break;
+    case &quot;-y&quot;:
+      heading = &quot;+x&quot;;
+      break;
+  }
+}
+
+const straight = () =&gt; {return;}
+
+</code></pre>
+<h2>generate the pattern</h2>
+<p>function to draw the pattern
+<code>drawSegment</code> just draws a line segment for now hehe</p>
+<pre><code>    function drawPattern(size,depth,max) {
+        let section = ``;
+        //creates eight segments - a single fractal unit
+        pattern.turns.forEach(turn =&gt; {
+        section += drawSegment(size,depth,max);
+        turn();
+        })
+        section += drawSegment(size,depth,max);
+        return section;
+    }
+</code></pre>
+<p><code>drawsegment</code> draws a line based on the current heading</p>
+<pre><code>    // draws a line based on the current heading and step size
+    function drawSegment(size,depth,max) {
+        let line = ``
+        switch (heading) {
+        case &quot;+x&quot;:
+            line += `h ${size} `;
+            break;
+        case &quot;+y&quot;:
+            line += `v ${size} `;
+            break;
+        case &quot;-x&quot;:
+            line += `h -${size} `;
+            break;
+        case &quot;-y&quot;:
+            line += `v -${size} `;
+            break;
+        }
+        return line
+    } 
+    }
+</code></pre>
+<h2>apply mutual recursion</h2>
+<p>call <code>drawPattern</code> within <code>drawSegment</code></p>
+<pre><code>    function drawSegment(size,depth,max) {
+    if (depth &lt; max) {
+        return drawPattern(size/pattern.scale,depth+1,max)
+    }
+
+    // ... code hidden for clarity ...
+    }
+</code></pre>
+<p>easy!</p>
+<h2>make some fractals!</h2>
+<pre><code>makeMinkowski()
+
+</code></pre>
+</article>
+    </main>
 
     </div>
+
+    <a href="/blog" class="backButton"><- back</a>
+
+</div>
 </div>
 
     </div>

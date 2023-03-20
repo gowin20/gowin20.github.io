@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">  
   <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 
-  <title>Generate fractal SVGs</title>
+  <title>Fractal SVGs</title>
 
 </head>
 <body>
@@ -130,131 +130,151 @@ crossorigin=""/>
     <div class="post-size">
 
     <header class="post-title">
-        Generate fractal SVGs
+        Fractal SVGs
     </header>
-    Sun Dec 04 2022 00:00:00 GMT+0000 (Coordinated Universal Time)
+    Sun Mar 19 2023 00:00:00 GMT+0000 (Coordinated Universal Time)
 
     <main class="post-content">
-            <article><h2>basics of SVG drawing</h2>
+            <article><img class="blog-visual" src="/assets/images/znhnS1keJ8-8482.jpeg" alt="Fractal SVG!" loading="lazy" decoding="async">
+<p>I love fractals. I see them in everything, and I've spent way too much time watching <a href="https://www.youtube.com/watch?v=LhOSM6uCWxk">Mandelbrot Fractal Zoom</a> videos on Youtube. It's only natural that I figured out how to generate them programmatically as soon as I learned about SVG Paths.</p>
+<p>I created a simple <a href="/fractal-svg">Fractal SVG Generator</a> that recursively creates self-similar images following a set pattern.</p>
+<p>Here's an example of what I'm talking about. Let's create a fractal out of the following pattern, called the &quot;Minkowski Sausage&quot;:</p>
+<img class="blog-visual" src="/assets/images/6EC2AsQ-4S-1502.jpeg" alt="Minkowski Sausage, Depth 1" loading="lazy" decoding="async">
+<p>A simple squiggle. Now, imagine that every line segmet that comprises the pattern gets replaces by a smaller version of the entire pattern:</p>
+<img class="blog-visual" src="/assets/images/By6zeTLHa0-1249.jpeg" alt="Minkowski Sausage, Depth 2" loading="lazy" decoding="async">
+<p>All eight line segments in the original pattern got replaced by smaller vesions of the pattern. Continuing this infinitely would give us a true fractal. Given the laggy nature of SVGs, we can only generate fractal-like patterns of a relatively small depth before everything starts freezing up. Here's the same Minkowski Sausage at depth 4:</p>
+<img class="blog-visual" src="/assets/images/YPGJZqWHrn-1201.jpeg" alt="Minkowski Sausage, Depth 4" loading="lazy" decoding="async">
+<p>Even at such a low depth, it already looks cool! This tool can be used to generate simple SVGs representing fractal patterns, which have many use cases. It is not an attempt to perfectly recreate fractals, and it was created entirely for fun.</p>
+<p>This is also a great way to learn more about SVGs. If you want to recreate this program yourself, read onwards!</p>
+<h3>Prerequisites</h3>
+<p>To get the most out of this article, you need:</p>
 <ul>
-<li>explain how to use <code>&lt;path&gt;</code>, <code>H</code>, <code>V</code> lines</li>
+<li>A basic understanding of how SVGs work</li>
+<li>A basic understanding of recursion</li>
+<li>A basic understanding of trigonometry</li>
 </ul>
-<h2>generate SVG files</h2>
-<pre><code>  const fs = require('fs');
-
-  function saveToFile(svg,depth) {
-      fs.writeFile(&quot;minkowski-sausage-&quot;+&quot;-&quot;+depth+&quot;.svg&quot;,svg,function (err){
-          if (err) throw err;
-      });
-  }
+<p>That's pretty much it. This is a simple concept.</p>
+<h3>SVG paths</h3>
+<p>The type of fractals we're interested in take the form of a single line. For a fractal with a depth limit, you can describe that line as a finite series of instructions that explain when to draw and when to turn. Enter the SVG <code>&lt;path&gt;</code> option.</p>
+<p>For beginner programmers, you can think of a <code>&lt;path&gt;</code> similar to a <a href="https://www.geeksforgeeks.org/turtle-programming-python/">turtle</a> in Python or sprites in <a href="https://scratch.mit.edu/">Scratch</a>. A <code>&lt;path&gt;</code> description provides a set of instructions to an invisible agent that draws lines. You control the agent by telling it to move to a set of spatial coordinates, drawing a line as it goes. This is highly simplified, and there are many more complex operations that you can perform using SVG paths. Today we're only going to use the <code>l</code> instruction.</p>
+<pre><code>&lt;path d=&quot;l 20 0&quot;&gt;&lt;/path&gt;
 </code></pre>
-<pre><code>  let svg = `&lt;svg width=&quot;${width}&quot; height=&quot;${width}&quot; id=&quot;iter1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;&gt;&lt;g&gt;&lt;path d=&quot;${path}&quot; fill=&quot;${fill}&quot; stroke=&quot;black&quot;/&gt;&lt;/g&gt;&lt;/svg&gt;`
-  saveToFile(svg,depth)
+<p>This will draw a line from <code>0,0</code> to <code>20,0</code> in the SVG view box. Let's use this to create an SVG.</p>
+<pre><code>&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; fill=&quot;#ffffff&quot; stroke=&quot;#000000&quot; viewBox=&quot;0 0 20 20&quot;&gt;
+    &lt;path d=&quot;l 20 0&quot;&gt;&lt;/path&gt;
+&lt;/svg&gt;
 </code></pre>
-<h2>encode the pattern</h2>
-<pre><code>  turns:[
-      turnLeft,
-      turnRight,
-      turnRight,
-      straight,
-      turnLeft,
-      turnLeft,
-      turnRight
-      ]
-</code></pre>
-<h2>handle different directions</h2>
-<pre><code>let heading = &quot;+x&quot;;
-
-// makes a 90deg left turn
-const turnLeft = () =&gt; {
-    switch (heading) {
-      case &quot;+x&quot;:
-        heading = &quot;-y&quot;;
-        break;
-      case &quot;-y&quot;:
-        heading = &quot;-x&quot;;
-        break;
-      case &quot;-x&quot;:
-        heading = &quot;+y&quot;;
-        break;
-      case &quot;+y&quot;:
-        heading = &quot;+x&quot;;
-        break;
-    }
+<p>This is a simple SVG of a line.</p>
+<h3>Fractal paths</h3>
+<p>For now, let's focus entirely on generating a <code>&lt;path&gt;</code> that represents a fractal. We'll leave the SVG tags behind and enter a JavaScript file to generate SVGs programmatically.</p>
+<pre><code>function drawPattern() {
+    let fractalPath = ``;
+    return fractalPath;
 }
-
-// makes a 90deg right turn
-const turnRight = () =&gt; {
-  switch (heading) {
-    case &quot;+x&quot;:
-      heading = &quot;+y&quot;;
-      break;
-    case &quot;+y&quot;:
-      heading = &quot;-x&quot;;
-      break;
-    case &quot;-x&quot;:
-      heading = &quot;-y&quot;;
-      break;
-    case &quot;-y&quot;:
-      heading = &quot;+x&quot;;
-      break;
-  }
-}
-
-const straight = () =&gt; {return;}
-
 </code></pre>
-<h2>generate the pattern</h2>
-<p>function to draw the pattern
-<code>drawSegment</code> just draws a line segment for now hehe</p>
-<pre><code>    function drawPattern(size,depth,max) {
-        let section = ``;
-        //creates eight segments - a single fractal unit
-        pattern.turns.forEach(turn =&gt; {
-        section += drawSegment(size,depth,max);
-        turn();
-        })
-        section += drawSegment(size,depth,max);
-        return section;
-    }
-</code></pre>
-<p><code>drawsegment</code> draws a line based on the current heading</p>
-<pre><code>    // draws a line based on the current heading and step size
-    function drawSegment(size,depth,max) {
-        let line = ``
-        switch (heading) {
-        case &quot;+x&quot;:
-            line += `h ${size} `;
-            break;
-        case &quot;+y&quot;:
-            line += `v ${size} `;
-            break;
-        case &quot;-x&quot;:
-            line += `h -${size} `;
-            break;
-        case &quot;-y&quot;:
-            line += `v -${size} `;
-            break;
-        }
-        return line
-    } 
-    }
-</code></pre>
-<h2>apply mutual recursion</h2>
-<p>call <code>drawPattern</code> within <code>drawSegment</code></p>
-<pre><code>    function drawSegment(size,depth,max) {
+<p>The <code>drawPattern</code> function will create the contents of the <code>d</code> parameter for a <code>&lt;path&gt;</code>. Adding recursion to this function will enable us to generate fractal SVGs.</p>
+<pre><code>function drawPattern(depth, max) {
+
+    let fractalPath = ``
+
     if (depth &lt; max) {
-        return drawPattern(size/pattern.scale,depth+1,max)
+        // Recursive call
+        fractalPath += drawPattern(depth+1,max)
+    }
+    else {
+        fractalPath += `l 0 5 `
     }
 
-    // ... code hidden for clarity ...
+    return fractalPath;
+}
+</code></pre>
+<p>This introduces recursion, but the output is still trivial. To create a path that looks like a fractal, we need to provide a pattern for the program to follow. That means that we need to create a system of instructions for moving the path around.</p>
+<p>I chose to implement a very simple system. All input to the <code>&lt;path&gt;</code> will be determined by a list containing two different instructions: <code>DRAW</code> and <code>TURN</code>. The <code>&quot;DRAW&quot;</code> instruction will move the pointer forward a set amount, while any integer input will be interpreted as a number of degrees to turn. Being able to &quot;turn&quot; our lines means we can draw complex fractal patterns.</p>
+<p>Here's an example of a set of instructions that draws a square:</p>
+<pre><code>[&quot;DRAW&quot;,90,&quot;DRAW&quot;,90,&quot;DRAW&quot;,90,&quot;DRAW&quot;]
+</code></pre>
+<p>To implement this, we will need to store the current heading of the pointer in a global.</p>
+<pre><code>let heading = 0;
+</code></pre>
+<p>Now, to intepret the different instructions:</p>
+<pre><code>pattern.forEach(instruction =&gt; {
+    if (instruction == &quot;DRAW&quot;) {
+        // Draw a line in the direction of heading
     }
+    else {
+        heading += instruction;
+        heading %= 360;
+    }
+})
 </code></pre>
-<p>easy!</p>
-<h2>make some fractals!</h2>
-<pre><code>makeMinkowski()
+<p>We'll use our good friend trigonometry to interpret the <code>heading</code> and create a line to the proper coordinates:</p>
+<pre><code>if (instruction == &quot;DRAW&quot;) {
 
+    // Draw a line in the direction of heading
+    const headingRad = (Math.PI * heading) / 180;
+
+    const dy = (size * Math.sin(headingRad));
+    const dx = (size * Math.cos(headingRad));
+    fractalPath += `l ${dx} ${dy} `
+
+}
 </code></pre>
+<p>This translates the heading into a pair of vectors <code>dy</code> and <code>dx</code>, then uses them to add a new <code>l</code> instruction to the path. Doing this recursively will create the fractals we are seeking. The only problem remaining is the <code>size</code> - we need the size to scale based on the depth in the fractal.</p>
+<pre><code>const size = 5 * depth
+</code></pre>
+<p>Perfect. Let's add everything together into one recursive function:</p>
+<pre><code>const pattern = [&quot;DRAW&quot;,90,&quot;DRAW&quot;,90,&quot;DRAW&quot;,90,&quot;DRAW&quot;]
+
+function drawPattern(depth, max) {
+
+    const size = 5 * depth;
+    let fractalPath = ``;
+
+    pattern.forEach(instruction =&gt; {
+        if (instruction == &quot;DRAW&quot;) {
+
+            if (depth+1 &lt; max) {
+                fractalPath += drawPattern(depth+1,max)
+            }
+            else {
+                fractalPath += `l 0 5 `
+            }
+
+            // Draw a line in the direction of heading
+            const headingRad = (Math.PI * heading) / 180;
+
+            const dy = (size * Math.sin(headingRad));
+            const dx = (size * Math.cos(headingRad));
+            fractalPath += `l ${dx} ${dy} `
+        }
+        else {
+            heading += instruction;
+            heading %= 360;
+        }
+    })
+
+    return fractalPath;
+}
+</code></pre>
+<p>And that's the core logic behind the system. Despite how short the code is, there is a large amount of complexity behind how the system works. This function can take in any pattern described in the language of moving and turning, and will generate a fractal version of that pattern. It does so by iteratively replacing each line in the pattern with a smaller version of that pattern. The only requirement for patterns is that they end at the same y-level as they began.</p>
+<p>Here's an example of how this function can be used to generate an SVG:</p>
+<pre><code>// Minkowski Sausage (Fractal dimension 1.5)
+const pattern = [&quot;DRAW&quot;,90,&quot;DRAW&quot;,-90,&quot;DRAW&quot;,-90,&quot;DRAW&quot;,&quot;DRAW&quot;,90,&quot;DRAW&quot;,90,&quot;DRAW&quot;,-90,&quot;DRAW&quot;];
+const depth = 4;
+
+// Generate path
+const path = drawPattern(0,maxDepth);
+
+// Create SVG element
+const fractalSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+const fractalPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+
+fractalPath.setAttribute('d', path);
+fractalSVG.appendChild(fractalPath);
+
+return fractalSVG
+</code></pre>
+<p>My <a href="/fractal-svg">fractal svg</a> site uses this logic to generate many different patterns. If you have any ideas for more patterns please let me know! I'm also looking to expand this system if anyone has suggestions.</p>
 </article>
     </main>
 
