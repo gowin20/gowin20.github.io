@@ -1,9 +1,11 @@
 ---
-title: Photographing art
-description: taking pictures of all the post-it notes i have
-image: notes-1/notes-1-suction-design-2.jpg
+title: Photographing notes
+description: Figuring out a workflow to take pictures of all the post-it notes i have
+image: notes-1/notes-on-wall.jpg
 date: 2022-12-07
 ---
+
+{% image "./src/images/notes-1/notes-on-wall.jpg", "notes on the wall at 520" %}
 
 I have a lot of post-it notes with art on them. I'm talking *a lot* a lot; around 1500 in total. My eventual goal is to create a dynamic website allowing you to view and zoom in on high-quality photographs of each note. To realize my vision, I'm going to need to take a ton of pictures.
 
@@ -25,15 +27,7 @@ The lighting looks great, and the arm works well enough for my purposes. I set t
 
 (bent notes image)
 
-Not all of my specimens have been treated properly, resulting in many warped edges and bent notes. I need a way to flatten each note to a uniform size. When i first devised this method, my plan was to layer a sheet of plastic over the notes. That worked... not so well!
-
-(reflection image)
-
-you can see the light source clear as day! You can even see my silly little face as well. This won't do at all. 
-
-This problem is getting complicated and extemely janky. I should probably just buy a scanner.
-
-This reflection problem turned out to be a much bigger issue than I thought, and I tried several different methods to fix it. I talked to my friend Armin, and he sent me these genius schematics that use suction to flatten the notes:
+Not all of my specimens have been treated properly, resulting in many warped edges and bent notes. I need a way to flatten each note to a uniform size. When i first devised this method, my plan was to layer a sheet of plastic over the notes. That turned out to not be an option due to the harsh reflection on the plastic. My friend suggested using a vacuum to flatten the notes, in the following fashion:
 
 {% image "./src/images/notes-1/notes-1-suction.jpg", "suction design" %}
 
@@ -41,5 +35,4 @@ This reflection problem turned out to be a much bigger issue than I thought, and
 
 {% image "./src/images/notes-1/notes-1-suction-design-2.jpg", "more suction setup" %}
 
-
-...i should probably just buy a scanner.
+This honestly seems smart. I'm going to try it out.
