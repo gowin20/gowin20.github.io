@@ -361,17 +361,16 @@ margin:0px;
 }
 
 .socials {
-    margin: 30px 0px;
+    margin: 0px auto 0px 0px;
     padding: 0;
     overflow: hidden;
     display:flex;
     flex-direction: row;
-    max-width:590px;
-    justify-content: center;
+
 }
 
 .socials div {
-    margin:0px 20px 0px 20px;
+    margin:0px 10px 0px 10px;
 }
 
 .social {
