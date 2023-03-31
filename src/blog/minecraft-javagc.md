@@ -12,13 +12,20 @@ I currently host a dedicated Minecraft server that can support 10-15 concurrent 
 ### My flags
 
 ```
-TODO paste my flags
+
+java -Xms$MAXRAM -Xmx$MINRAM -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=40 -XX:G1MaxNewSizePercent=50 -XX:G1HeapRegionSize=16M -XX:G1ReservePercent=15 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=20 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -jar $JAR
+
 ```
 
 ### Resources
+
+[Tuning Java GC for minecraft](https://mcflags.emc.gs)
 
 [Fundamentals of Java GC (video)](https://www.youtube.com/watch?v=UnaNQgzw4zY)
 
 [Etil minecraft flags](https://github.com/etil2jz/etil-minecraft-flags)
 
 [Aikar's Flags (papermc)](https://docs.papermc.io/paper/aikars-flags)
+
+
+For large servers, I reccommend checking out [Folia](https://github.com/PaperMC/Folia), the new project by PaperMC. It groups server chunks by region to allow multithreading.
