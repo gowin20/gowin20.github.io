@@ -137,12 +137,16 @@ crossorigin=""/>
     <main class="post-content">
             <article><p>I currently host a dedicated Minecraft server that can support 10-15 concurrent players. To accomplish this, I had to learn in detail about the Java Garbage Collector. What follows are my tips for how to optimize Java's garbage collection for Minecraft servers.</p>
 <h3>My flags</h3>
-<pre><code>TODO paste my flags
+<pre><code>
+java -Xms$MAXRAM -Xmx$MINRAM -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=40 -XX:G1MaxNewSizePercent=50 -XX:G1HeapRegionSize=16M -XX:G1ReservePercent=15 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=20 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -jar $JAR
+
 </code></pre>
 <h3>Resources</h3>
+<p><a href="https://mcflags.emc.gs">Tuning Java GC for minecraft</a></p>
 <p><a href="https://www.youtube.com/watch?v=UnaNQgzw4zY">Fundamentals of Java GC (video)</a></p>
 <p><a href="https://github.com/etil2jz/etil-minecraft-flags">Etil minecraft flags</a></p>
 <p><a href="https://docs.papermc.io/paper/aikars-flags">Aikar's Flags (papermc)</a></p>
+<p>For large servers, I reccommend checking out <a href="https://github.com/PaperMC/Folia">Folia</a>, the new project by PaperMC. It groups server chunks by region to allow multithreading.</p>
 </article>
     </main>
 
