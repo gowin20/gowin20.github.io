@@ -1,7 +1,10 @@
 ---
 title: Fractal SVGs
-tags: tutorial, math
-category: frontend
+tags: 
+    - tutorial
+    - math
+    - svg
+    - frontend
 description: Recusrively generate fractals using Javascript
 image: minkowski-cover.png
 date: 2023-03-19

@@ -1,6 +1,5 @@
 ---
 title: Generate fractal SVGs
-tags: tutorial, math
 category: frontend
 description: Recusrively generate quadratic koch curves using Javascript
 image: sausage-5-filled.svg

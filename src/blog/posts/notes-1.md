@@ -1,6 +1,9 @@
 ---
 title: Photographing notes
 description: Figuring out a workflow to take pictures of all the post-it notes i have
+tags:
+    - art
+    - post-it
 image: notes-1/notes-on-wall.jpg
 date: 2022-12-07
 ---

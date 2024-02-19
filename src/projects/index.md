@@ -1,6 +1,8 @@
 ---
-title: Projects
-layout: layouts/index.njk
+title: works
+layout: root-page.njk
 ---
 
-hi
+* [cobble.page](http://cobble.page)
+
+* [fractal SVG generator](/projects/fractal-svg/)

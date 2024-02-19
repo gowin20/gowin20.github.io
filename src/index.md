@@ -1,22 +1,20 @@
 ---
 title: G Owen
-layout: layouts/index.njk
+hideTitle: true
+layout: root-page.njk
 templateEngineOverride: njk,md
 ---
 
 {% include "components/socials.njk" %}
 
-### Highlights
-
-* [cobble.page](http://cobble.page)
-
-* [fractal SVG generator](/projects/fractal-svg/)
-
 ### About me
 
-Hiiiiii! My name is Gwen Owen. I'm a programmer, author, and artist passionate about reality.
+Hiiiii! My name is Gwen Owen. I'm a creative who enjoys writing, programming, and more. I use any pronouns but prefer she/they.
 
-This website is currently undergoing a rework to add *✨actual personality✨* rather than just being a gray blob. Stay tuned for delicious neon synthwave vibes 🌇
+
+
+This domain hosts my blog and assorted web projects. For pictures of me, see Instagram 🌇.
+✨✨
 
 At any given point you may happen upon me doing the following:
 * developing web apps

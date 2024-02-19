@@ -1,15 +1,15 @@
-{%extends "layouts/base.njk"%}
+{%extends "base.njk"%}
 
 {%block content %}
 <div class="content-spacing">
     <a href="/" class="top-name">GWEN OWEN</a>
     
     <div class="root-page">
-        {%block header %}
+        {% if not hideTitle %}
         <header>
             <h1>{{ title }}</h1>
         </header>
-        {%endblock%}
+        {% endif %}
 
         {{ content | safe }}
 
