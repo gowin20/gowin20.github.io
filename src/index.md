@@ -1,5 +1,5 @@
 ---
-title: Gwen Owen
+title: G Owen
 layout: layouts/index.njk
 templateEngineOverride: njk,md
 ---
@@ -14,7 +14,7 @@ templateEngineOverride: njk,md
 
 ### About me
 
-Hi! My name is Gwen Owen. I'm a programmer, author, and artist passionate about reality.
+Hiiiiii! My name is Gwen Owen. I'm a programmer, author, and artist passionate about reality.
 
 This website is currently undergoing a rework to add *✨actual personality✨* rather than just being a gray blob. Stay tuned for delicious neon synthwave vibes 🌇
 

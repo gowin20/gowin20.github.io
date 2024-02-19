@@ -65,7 +65,7 @@ h2 {
 
 #cornerMap {
     width:100px; 
-    height:100px;
+    height:100%;
 }
 
 .mapSmall {
@@ -330,6 +330,7 @@ margin:0px;
     margin:0px;
     font-family: 'Montserrat','sans-serif';
     font-size:23px;
+    background-color: #e7e7e7;
 }
 
 #navlist li {
