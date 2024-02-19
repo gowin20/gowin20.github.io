@@ -44,14 +44,12 @@ async function imageShortcode(
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/CNAME");
-  eleventyConfig.addPassthroughCopy("./src/css");
-  eleventyConfig.addWatchTarget("./src/css/");
+
   eleventyConfig.addPassthroughCopy("./src/images");
   eleventyConfig.addWatchTarget("./src/images/");
-  eleventyConfig.addPassthroughCopy("./src/content");
-  eleventyConfig.addWatchTarget("./src/content/");
-  eleventyConfig.addPassthroughCopy("./src/scripts");
-  eleventyConfig.addWatchTarget("./src/scripts/");
+
+  eleventyConfig.addPassthroughCopy("./src/projects");
+  eleventyConfig.addWatchTarget("./src/projects/");
 
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
   eleventyConfig.addLiquidShortcode("image", imageShortcode);
