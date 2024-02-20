@@ -18,18 +18,28 @@ html {
     min-height:100vh;
 }
 
-.blog-visual {
-    max-height: 100vh;
-    max-width: 100%;
-    object-fit:contain;
+.topmatter {
+    display:flex;
+    flex-direction: row;
+    font-family: 'Montserrat', sans-serif;
+    border-width:1px;
 }
 
-.blog-visual:active {
-    max-height:100%;
+.top-name{
+    display:block;
+    color: #616365;
+    text-decoration: none;
+    margin: 0px;
+    font-size: 60px;
+    line-height:1.2;
+    letter-spacing:-1px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:300;
+    overflow:hidden;
 }
-
-
-
+.top-name:hover{
+    color:black;
+}
 h1 {
     font-size: 36px;
     line-height:1.2;
@@ -46,6 +56,46 @@ h2 {
     margin:0px 0px 30px 0px;
 }
 
+.content-pane {
+    position:absolute;
+    left:100px;
+    top:0;
+    width:calc(100% - 105px);
+    min-height:100%;
+    height:100%;
+}
+
+/* used in root page layout */
+.content-spacing {
+    margin:0;
+    padding:14px 0px 0px 40px;
+    min-height:calc(100% - 14px);
+    max-width:1000px;
+    width:calc(100% - 100px);
+    position:relative;
+
+    display:flex;
+    flex-direction: column;
+}
+
+.root-page {
+    margin:0px;
+    padding-top:24px;
+}
+.root-footer {
+    margin-top:auto;
+    padding-bottom: 10px; 
+}
+
+
+
+.blog-visual {
+    max-height: 100vh;
+    max-width: 400px;
+    object-fit:contain;
+}
+
+/* post css */
 .post-title {
     display:block;
     margin:39px 0px 0px 0px;
@@ -56,53 +106,11 @@ h2 {
     overflow:visible;
 }
 
-.topmatter {
-    display:flex;
-    flex-direction: row;
-    font-family: 'Montserrat', sans-serif;
-    border-width:1px;
-}
-
-
-.top-name{
-    display:block;
-    color: #616365;
-    text-decoration: none;
-    margin: 14px 0px;
-    font-size: 60px;
-    line-height:1.2;
-    letter-spacing:-1px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight:300;
-    overflow:hidden;
-}
-.top-name:hover{
-    color:black;
-}
-
-.root-page {
-    margin:0px;
-    padding:24px 40px 0px 0px;
-    height:100%;
-}
-
-
-/* post css */
-
 .post-bg {
     margin:-12px 0px 0px 1px;
     width:100%;
     min-height:100%;
     background-color:#f7f7f7;
-}
-
-.content-spacing {
-    margin:0px auto auto 0px;
-    padding:0px 20px 40px 40px;
-    min-height:100vh;
-
-    max-width:1000px;
-    width:calc(100% - 100px);
 }
 
 .post-size {
@@ -239,15 +247,6 @@ article pre {
     color:#5e5e5e;
     text-decoration:underline;
 }
-
-.content-pane {
-    position:absolute;
-    left:100px;
-    top:0;
-    width:calc(100% - 105px);
-    min-height:100%;
-}
-
 
 /* socials */
 .socials {

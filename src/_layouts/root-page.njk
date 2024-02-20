@@ -5,14 +5,12 @@
     <a href="/" class="top-name">GWEN OWEN</a>
     
     <div class="root-page">
-        {% if not hideTitle %}
-        <header>
-            <h1>{{ title }}</h1>
-        </header>
-        {% endif %}
-
         {{ content | safe }}
 
     </div>
+    <div class="root-footer">
+    {% include "components/socials.njk" %}
+    </div>
 </div>
+
 {%endblock%}
