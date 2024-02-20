@@ -1,5 +1,6 @@
 // Images
 const Image = require("@11ty/eleventy-img");
+const CleanCSS = require('clean-css')
 
 const ImageWidths = {
   ORIGINAL: null,
@@ -78,7 +79,13 @@ module.exports = function (eleventyConfig) {
     return arr[0];
   });
 
-  	// Return all the tags used in a collection
+  // CSS minifier
+  eleventyConfig.addFilter('cssMin', css => {
+    return new CleanCSS({}).minify(code).styles;
+  });
+
+
+  // Tag-related filters
 	eleventyConfig.addFilter("getAllTags", collection => {
 		let tagSet = new Set();
 		for(let item of collection) {

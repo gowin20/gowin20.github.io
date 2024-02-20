@@ -63,17 +63,6 @@ h2 {
     border-width:1px;
 }
 
-#cornerMap {
-    width:100px; 
-    height:100%;
-}
-
-.mapSmall {
-    height:50px !important;
-}
-.cornerimg {
-    width:200px;
-}
 
 .top-name{
     display:block;
@@ -90,38 +79,15 @@ h2 {
 .top-name:hover{
     color:black;
 }
-.side-name {
-    height:40px;
-    display:none;
-    color: #939599;
-    text-decoration: none;
-    margin:0px;
-    padding:10px 10px 0px 13px;
-    font-size: 23px;
-    line-height:1.2;
-    letter-spacing:-1px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight:300;
-}
-.side-name-mini {
-    height:40px;
-    display:block;
-    color: #5e5e5e;
-    text-decoration: none;
-    margin:0px;
-    padding:10px 10px 0px 13px;
-    font-size: 23px;
-    line-height:1.2;
-    letter-spacing:-1px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight:300;
-}
 
 .root-page {
     margin:0px;
     padding:24px 40px 0px 0px;
     height:100%;
 }
+
+
+/* post css */
 
 .post-bg {
     margin:-12px 0px 0px 1px;
@@ -167,14 +133,6 @@ article pre {
     color:#5e5e5e;
     font-size:18px;
     font-family: 'Montserrat','Sans-serif';
-}
-
-.index-content {
-    margin-left:12px;
-}
-
-.about-content {
-    display:block;
 }
 
 .card-grid {
@@ -282,20 +240,6 @@ article pre {
     text-decoration:underline;
 }
 
-.side-nav {
-    position:sticky;
-    top:0px;
-}
-
-#sidebar {
-    position:fixed;
-    left:0;
-    top:0;
-    bottom:0;
-    width:100px;
-    background-color: #e7e7e7;
-    border-width:1px;
-}
 .content-pane {
     position:absolute;
     left:100px;
@@ -304,63 +248,8 @@ article pre {
     min-height:100%;
 }
 
-.nav-img {
-    display:none;
-    width:75px;
-    height:44px;
-}
 
-.nav-img img {
-height:100%;
-margin:0px;
-}
-
-.nav {
-    margin: 12px auto auto auto;
-    padding: 0;
-}
-
-#navlist {
-    list-style-type: none;
-    overflow: hidden;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    padding:0px;
-    margin:0px;
-    font-family: 'Montserrat','sans-serif';
-    font-size:23px;
-    background-color: #e7e7e7;
-}
-
-#navlist li {
-    height:44px;
-    width:75px;
-    border-radius:8px;
-    margin: 12px 0px 12px 12.5px;
-    display:flex;
-    flex-direction: row;
-
-    color: #5e5e5e;
-    text-align: center;
-    text-decoration: none;
-    border-radius:8px;
-}
-
-#navlist li span {
-    margin:0px 0px 0px 0px;
-}
-
-#navlist li:hover {
-    color:black;
-    text-decoration: underline;
-}
-
-.activeNav {
-    color:black !important; 
-    text-decoration:underline !important;
-}
-
+/* socials */
 .socials {
     margin: 0px auto 0px 0px;
     padding: 0;
@@ -387,36 +276,23 @@ margin:0px;
     color:#939599;
     font-size:16px;
 }
-
-  /* Small devices (portrait tablets and large phones, 600px and down) */
-  @media only screen and (max-width: 590px) {
-
-
-  }
-  
+ 
   /* Medium devices (landscape tablets, 600px and up) */
   @media only screen and (min-width: 590px) {
     .root-page{width:534px;}
 
     .post-card {width:255px; height:255px;}
-
-    
-    
   } 
 
   @media only screen and (max-width:670px) {
-    #sidebar {
-        display:none;
-    }
+
     .content-pane {
         position:absolute;
         left:0;
         right:0;
         width:100vw;
     }
-    #cornerMap {
-        display:none;
-    }
+
     .top-name {
         display:block;
         width:100%;
@@ -430,15 +306,11 @@ margin:0px;
     /*.post-card {width:240px; height:268px; flex:none}*/
     .card-grid {grid-template-columns: auto;width:240px;}
     .recent-grid {grid-template-columns: auto;}
-
-    .navlist {flex-direction: column;}
   }
   
   /* Large devices (laptops/desktops, 843px and up) */
   @media only screen and (min-width: 1000px) {
     .root-page{width:746px;}
-    .about-content{    display:flex;
-        flex-direction: row;}
     .about-text {
         margin: 0px 0px 0px 24px;
     }
@@ -452,29 +324,6 @@ margin:0px;
         position:absolute;
         left:200px;
         width:calc(100% - 205px);
-    }
-    #sidebar {width:200px;}
-    .nav-img {
-        display:block
-    }
-    .side-name {
-        display:block
-    }
-    .side-name-mini{
-        display:none
-    }
-    #navlist li {
-        width:150px;
-        margin: 12px 0px 12px 25px;
-    }
-    #navlist li:hover {
-        text-decoration: underline;
-    }
-    .activeNav {
-        text-decoration:underline !important;
-    }
-    #cornerMap {
-        width:200px;
     }
     .top-name {
         margin:4px 0px 4px 0px;
