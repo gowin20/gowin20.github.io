@@ -2,7 +2,8 @@
 title: Races in the world of One Piece
 description: What is the origin of the different races in the world of One Piece?
 image: OP-races.webp
-category: One Piece
+tags: 
+    - one-piece
 date: 2022-11-12
 ---
 

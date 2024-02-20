@@ -1,22 +1,26 @@
 ---
-title: George Owen
-layout: layouts/index.njk
+title: G Owen
+hideTitle: true
+layout: root-page.njk
 templateEngineOverride: njk,md
 ---
 
-{% include "components/socials.njk" %}
+This domain hosts my blog and assorted web projects. For my photography, see [Instagram]() 🌇.
 
-### Highlights
+{% image "./src/images/frontpage/gwen-neonjacket.jpg", "it's me" %}
 
-* [cobble.page](http://cobble.page)
+# About me
 
-* [fractal SVG generator](/fractal-svg)
+Hiiiii! My name is Gwen Owen. I'm a creative who enjoys writing, programming, and more. I use any pronouns but prefer "she".
 
-### About me
+At any given point you may happen upon me doing the following:
+* developing web apps
+* writing technical documentation
+* drawing on post-it notes
+* creating maps
+* cultivating virtual community
+* doing my nails and makeup
+* supporting queer artists
 
 
-Hi! My name is George Owen. I'm a programmer, author, and artist passionate about reality.
-
-You can find me making websites, writing technical documentation, or drawing on post-it notes.
-
-{% image "./src/images/go-graduation-stand.jpg", "A graduation photo" %}
+# Socials

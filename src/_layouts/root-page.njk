@@ -1,0 +1,16 @@
+{%extends "base.njk"%}
+
+{%block content %}
+<div class="content-spacing">
+    <a href="/" class="top-name">GWEN OWEN</a>
+    
+    <div class="root-page">
+        {{ content | safe }}
+
+    </div>
+    <div class="root-footer">
+    {% include "components/socials.njk" %}
+    </div>
+</div>
+
+{%endblock%}

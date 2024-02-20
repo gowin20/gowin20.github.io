@@ -1,0 +1,156 @@
+#sidebar {
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    width:100px;
+    background-color: #e7e7e7;
+    border-width:1px;
+}
+
+#cornerMap {
+    width:100px; 
+    height:100%;
+    z-index:0;
+}
+
+.mapSmall {
+    height:50px !important;
+}
+.cornerimg {
+    width:200px;
+}
+
+.side-name {
+    height:40px;
+    color: #5e5e5e;
+    text-decoration: none;
+    margin:0px;
+    padding:10px 10px 0px 13px;
+    font-size: 23px;
+    line-height:1.2;
+    letter-spacing:-1px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:300;
+    z-index:5;
+    position:absolute;
+    top:125px;
+    background-color: #e7e7e7;
+}
+
+.name-full {
+    display:none;
+}
+
+.name-mini {
+    display:block;
+}
+
+
+
+/* nav menu */
+.nav {
+    margin: auto 5px;
+    padding: 7px;
+    position:absolute;
+    top:165px;
+    left:0;
+    z-index:5;
+    border-radius:0px 30px 0px 30px;
+    background-color: #e7e7e7;
+}
+#navlist {
+    list-style-type: none;
+    overflow: hidden;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    padding:0px;
+    margin:0px;
+    font-family: 'Montserrat','sans-serif';
+    font-size:23px;
+}
+
+#navlist li {
+    height:44px;
+    width:75px;
+    border-radius:8px;
+    margin: 12px 0px 12px 12.5px;
+    display:flex;
+    flex-direction: row;
+
+    color: #5e5e5e;
+    text-align: center;
+    text-decoration: none;
+    border-radius:8px;
+}
+
+#navlist li span {
+    margin:0px 0px 0px 0px;
+}
+
+#navlist li:hover {
+    color:black;
+    text-decoration: underline;
+}
+
+.nav-img {
+    display:none;
+    width:75px;
+    height:44px;
+}
+
+.nav-img img {
+height:100%;
+margin:0px;
+}
+
+.activeNav {
+    color:black !important; 
+    text-decoration:underline !important;
+}
+
+
+
+/* small device breakpoint (590px) */
+
+/* medium device breakpoint (670px) */
+@media only screen and (max-width:670px) {
+    #sidebar {
+        display:none;
+    }
+    
+    #cornerMap {
+        display:none;
+    }
+    .navlist {flex-direction: column;}
+}
+
+/* large device breakpoint (1000px) */
+@media only screen and (min-width:1000px) {
+    .name-full {
+        display:block
+    }
+    .name-mini{
+        display:none
+    }
+    #sidebar {
+        width:200px;
+    }
+    #cornerMap {
+        width:200px;
+    }
+    .nav-img {
+        display:block
+    }
+    #navlist li {
+        width:150px;
+        margin: 12px 0px 12px 25px;
+    }
+    #navlist li:hover {
+        text-decoration: underline;
+    }
+    .activeNav {
+        text-decoration:underline !important;
+    }
+}
