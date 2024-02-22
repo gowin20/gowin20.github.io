@@ -8,12 +8,11 @@
             {{post.data.title}}
             <a href="{{post.url}}"><span class="card-link"></span></a>
         </div>
-        <!--p class="card-description">{{post.data.description}}</p-->
         <div class="card-tag-container">
             <div class="card-tags">
                 {% for tag in post.data.tags %}
                 {%if tag != 'posts'%}
-                    <a href="/tags/{{tag}}">#{{tag}}</a>
+                    <a href="/blog/tags/{{tag}}">#{{tag}}</a>
                 {%endif%}
                 {%endfor%}
             </div>  
