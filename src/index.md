@@ -2,7 +2,6 @@
 title: G Owen
 hideTitle: true
 layout: root-page.njk
-templateEngineOverride: njk,md
 ---
 
 This domain hosts my blog and assorted web projects. For my photography, see [Instagram]() 🌇.
