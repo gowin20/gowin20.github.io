@@ -14,13 +14,6 @@
     z-index:0;
 }
 
-.mapSmall {
-    height:50px !important;
-}
-.cornerimg {
-    width:200px;
-}
-
 .side-name {
     width:180px;
     height:40px;
@@ -154,11 +147,5 @@
     #navlist li {
         width:150px;
         margin: 12px 0px 12px 25px;
-    }
-    #navlist li:hover {
-        text-decoration: underline;
-    }
-    .activeNav {
-        text-decoration:underline !important;
     }
 }
