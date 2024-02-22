@@ -1,5 +1,6 @@
 {%extends "components/sidebar.njk" %}
+{% from 'name.njk' import myName %}
 {% block topmatter %}
-<div onclick="location.href='/blog'" class="side-name name-full">GWEN OWEN</div>
+<div onclick="location.href='/blog'" class="side-name name-full">{{myName | upper}} OWEN</div>
 <div onclick="location.href='/blog'" class="side-name name-mini">OWEN</div>
 {%endblock%}

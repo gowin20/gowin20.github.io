@@ -19,10 +19,11 @@ This domain hosts my blog and assorted web projects. For my photography, see [In
 ]%}
 {{ imageCarousel('/images/frontpage/',images) }}
 
+{% from "name.njk" import myName %}
 
 # About me
 
-Hiiiii! My name is Gwen Owen. I'm a creative who enjoys writing, programming, and more. I use any pronouns but prefer "she".
+Hiiiii! My name is {{myName}} Owen. I'm a creative who enjoys writing, programming, and more. I use any pronouns but prefer "she".
 
 At any given point you may happen upon me doing the following:
 * developing web apps
