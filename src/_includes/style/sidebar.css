@@ -98,7 +98,6 @@
 
 #navlist li:hover {
     color:black;
-    text-decoration: underline;
 }
 
 .nav-img {
@@ -114,7 +113,6 @@
 
 .activeNav {
     color:black !important; 
-    text-decoration:underline !important;
 }
 
 

@@ -1,5 +1,5 @@
 ---
-title: Home
+title: home
 hideTitle: true
 layout: root-page.njk
 ---
