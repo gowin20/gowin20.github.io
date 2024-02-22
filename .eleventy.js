@@ -1,5 +1,6 @@
 // Images
 const Image = require("@11ty/eleventy-img");
+const CleanCSS = require('clean-css')
 
 const ImageWidths = {
   ORIGINAL: null,
@@ -44,14 +45,12 @@ async function imageShortcode(
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/CNAME");
-  eleventyConfig.addPassthroughCopy("./src/css");
-  eleventyConfig.addWatchTarget("./src/css/");
+
   eleventyConfig.addPassthroughCopy("./src/images");
   eleventyConfig.addWatchTarget("./src/images/");
-  eleventyConfig.addPassthroughCopy("./src/content");
-  eleventyConfig.addWatchTarget("./src/content/");
-  eleventyConfig.addPassthroughCopy("./src/scripts");
-  eleventyConfig.addWatchTarget("./src/scripts/");
+
+  eleventyConfig.addPassthroughCopy("./src/projects");
+  eleventyConfig.addWatchTarget("./src/projects/");
 
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
   eleventyConfig.addLiquidShortcode("image", imageShortcode);
@@ -80,13 +79,34 @@ module.exports = function (eleventyConfig) {
     return arr[0];
   });
 
+  // CSS minifier
+  eleventyConfig.addFilter('cssMin', css => {
+    return new CleanCSS({}).minify(css).styles;
+  });
+
+
+  // Tag-related filters
+	eleventyConfig.addFilter("getAllTags", collection => {
+		let tagSet = new Set();
+		for(let item of collection) {
+			(item.data.tags || []).forEach(tag => tagSet.add(tag));
+		}
+		return Array.from(tagSet);
+	});
+
+	eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
+		return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
+	});
+
 
   return {
     dir: {
       input: "src",
       output: "public",
-      markdownTemplateEngine: "md"
+      includes: "_includes",
+      layouts: "_layouts",
     },
+    markdownTemplateEngine: "njk",
     cname: 'geowen.dev'
   };
 };

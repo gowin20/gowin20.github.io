@@ -2,7 +2,8 @@
 title: What will happen on Elbaf?
 image: elbaf.webp
 description: Post-1066 predictions about the upcoming Elbaf arc.
-category: One Piece
+tags:
+    - one-piece
 date: 2022-11-12
 ---
 

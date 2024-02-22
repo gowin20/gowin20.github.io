@@ -1,22 +1,38 @@
 ---
-title: George Owen
-layout: layouts/index.njk
-templateEngineOverride: njk,md
+title: Home
+hideTitle: true
+layout: root-page.njk
 ---
 
-{% include "components/socials.njk" %}
+This domain hosts my blog and assorted web projects. For my photography, see [Instagram]() 🌇.
 
-### Highlights
+{% from "components/image-slideshow.njk" import imageCarousel %}
+{% set images = [
+'gwen-neonjacket.jpg',
+'rave-step.png',
+'gwen-firstwig.jpg',
+'gwen-preppy.jpg',
+'rave-kick.jpg',
+'go-graduation-stand.jpg',
+'gwen-crode.jpg',
+'desert-profile.jpg'
+]%}
+{{ imageCarousel('/images/frontpage/',images) }}
 
-* [cobble.page](http://cobble.page)
+{% from "name.njk" import myName %}
 
-* [fractal SVG generator](/fractal-svg)
+# About me
 
-### About me
+Hiiiii! My name is {{myName}} Owen. I'm a creative who enjoys writing, programming, and more. I use any pronouns but prefer "she".
+
+At any given point you may happen upon me doing the following:
+* developing web apps
+* writing technical documentation
+* drawing on post-it notes
+* creating maps
+* cultivating virtual community
+* doing my nails and makeup
+* supporting queer artists
 
 
-Hi! My name is George Owen. I'm a programmer, author, and artist passionate about reality.
-
-You can find me making websites, writing technical documentation, or drawing on post-it notes.
-
-{% image "./src/images/go-graduation-stand.jpg", "A graduation photo" %}
+# Socials

@@ -1,5 +1,5 @@
 {
-    "layout": "layouts/featured",
+    "layout": "featured",
     "permalink": "/show/{{ page.fileSlug }}/",
     "tags":"featured"
 }

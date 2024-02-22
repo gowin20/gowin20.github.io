@@ -1,0 +1,157 @@
+#sidebar {
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    width:100px;
+    background-color: #e7e7e7;
+    border-width:1px;
+}
+
+#cornerMap {
+    width:100px; 
+    height:100%;
+    z-index:0;
+}
+
+.name-gwen {
+    font-size:25px;
+}
+.name-george {
+    font-size:22px;
+}
+
+.side-name {
+    top:100px;
+    width:180px;
+    height:40px;
+    color: #5e5e5e;
+    text-decoration: none;
+    margin:0px 5px;
+    padding:5px 5px 0px 5px;
+    text-align: center;
+    line-height:1.2;
+    letter-spacing:0px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:300;
+    z-index:5;
+    position:absolute;
+    
+    background-color: #e7e7e7;
+    cursor:pointer;
+}
+
+.side-name:hover {
+    color:black;
+}
+
+.name-full {
+    display:none;
+}
+
+.name-mini {
+    display:block;
+}
+
+
+
+/* nav menu */
+.nav {
+    margin: 0px 5px;
+    padding: 0px 5px;
+    position:absolute;
+    top:140px;
+    left:0;
+    z-index:5;
+    border-radius:0px;
+    width:180px;
+    background-color: #e7e7e7;
+}
+#navlist {
+    list-style-type: none;
+    overflow: hidden;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    padding:0px;
+    margin:0px;
+    font-family: 'Montserrat','sans-serif';
+    font-size:23px;
+}
+
+#navlist li {
+    height:44px;
+    width:75px;
+
+    margin: 12px 0px 12px 12.5px;
+    display:flex;
+    flex-direction: row;
+
+    color: #5e5e5e;
+    text-align: center;
+    text-decoration: none;
+}
+
+#navlist li span {
+    margin:0px;
+}
+
+#navlist li:hover {
+    color:black;
+    text-decoration: underline;
+}
+
+.nav-img {
+    display:none;
+    width:75px;
+    height:44px;
+}
+
+.nav-img img {
+    height:100%;
+    margin:0px;
+}
+
+.activeNav {
+    color:black !important; 
+    text-decoration:underline !important;
+}
+
+
+
+/* small device breakpoint (590px) */
+
+/* medium device breakpoint (670px) */
+@media only screen and (max-width:670px) {
+    #sidebar {
+        display:none;
+    }
+    
+    #cornerMap {
+        display:none;
+    }
+    .navlist {flex-direction: column;}
+}
+
+/* large device breakpoint (1000px) */
+@media only screen and (min-width:1000px) {
+    .name-full {
+        display:block
+    }
+    .name-mini{
+        display:none
+    }
+    #sidebar {
+        width:200px;
+    }
+    #cornerMap {
+        width:200px;
+    }
+    .nav-img {
+        display:block
+    }
+    #navlist li {
+        width:150px;
+        margin: 12px 0px 12px 25px;
+    }
+}
