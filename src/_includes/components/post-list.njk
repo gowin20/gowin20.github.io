@@ -1,9 +1,11 @@
+{% set css %}
+    {%include "style/postCards.css"%}
+{%endset%}
+<style>
+    {{ css | cssMin | safe }}
+</style>
 <div class="card-grid">
-
-{%- for post in collections.posts | reverse -%}
-
-{% include "components/post-card.njk" %}
-
-{%- endfor -%}
-
+    {%- for post in collections.posts | reverse -%}
+        {% include "components/post-card.njk" %}
+    {%- endfor -%}
 </div>
