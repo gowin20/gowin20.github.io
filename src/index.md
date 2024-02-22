@@ -7,7 +7,19 @@ templateEngineOverride: njk,md
 
 This domain hosts my blog and assorted web projects. For my photography, see [Instagram]() 🌇.
 
-{% image "./src/images/frontpage/gwen-neonjacket.jpg", "it's me" %}
+{% from "components/image-slideshow.njk" import imageCarousel %}
+{% set images = [
+'gwen-neonjacket.jpg',
+'rave-step.png',
+'gwen-firstwig.jpg',
+'gwen-preppy.jpg',
+'rave-kick.jpg',
+'go-graduation-stand.jpg',
+'gwen-crode.jpg',
+'desert-profile.jpg'
+]%}
+{{ imageCarousel('/images/frontpage/',images) }}
+
 
 # About me
 

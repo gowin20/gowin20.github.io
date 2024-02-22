@@ -4,6 +4,7 @@
   "description": "G+O wen's blog",
   "main": ".eleventy.js",
   "dependencies": {
+    "@splidejs/splide": "^4.1.4",
     "clean-css": "^5.3.3"
   },
   "devDependencies": {
