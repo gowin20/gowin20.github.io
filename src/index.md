@@ -1,5 +1,5 @@
 ---
-title: G Owen
+title: Home
 hideTitle: true
 layout: root-page.njk
 ---
