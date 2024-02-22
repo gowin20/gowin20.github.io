@@ -1,7 +1,6 @@
 ---
 title: blog
 layout: root-page.njk
-templateEngineOverride: njk,md
 ---
 
 # Blog

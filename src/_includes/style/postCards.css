@@ -1,0 +1,141 @@
+
+:root {
+    /* global variables for width and height, set dynamically using breakpoints */
+    --card-width:296px;
+    --card-height:479px;
+}
+
+.card-grid {
+    display:grid;
+    grid-template-columns: auto auto;
+    gap:24px; 
+}
+
+/* post card related things */
+.post-card {
+    /*appearance and relative position*/
+    margin:auto;
+    height: var(--card-height);
+    width: var(--card-width);
+    position:relative;
+
+
+    /* inner contents */
+    display:flex;
+    flex-direction: column;
+    background-color: #F2F2F2;
+}
+
+.post-card:hover {
+    color:blue
+}
+
+.card-link {
+    position:absolute; 
+    width:100%;
+    height:100%;
+    top:0;
+    left: 0;
+    
+    z-index: 1;
+}
+
+.post-card-img {
+    width:100%;
+    height: var(--card-width);
+    z-index: 0;
+    
+    border-style:solid;
+    border-width:1px;
+    border-color:#ccc;
+}
+.post-card-img img {
+    width:100%;
+    height:var(--card-width);
+    object-fit:cover;
+}
+
+.card-text {
+    margin: 0px auto 0px 0px;
+    z-index:5;
+    display:flex;
+    flex-direction: row;
+    width:100%;
+    min-height:calc(100% - var(--card-width));
+
+    border-style:none solid solid solid;
+    border-width:1px;
+    border-color:#ccc;
+}
+
+.card-tag-container {
+    width:calc(100% - calc(var(--card-width) / 1.618));
+    height:100%;
+    
+    border-style:none none none solid;
+    border-width:1px;
+    border-color:#ccc;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+.card-tags {
+    padding:5px 5px 0px 5px;
+    font-size:12px;
+
+    text-decoration:underline;
+}
+.card-tags p {
+    margin:0px;
+    padding:0px;
+}
+.card-tags a {
+    color:#5e5e5e;
+}
+.card-tags a:hover {
+
+    color:black;
+}
+
+.card-title {
+    position:relative;
+    width:calc(304px / 1.618);
+    font-family: 'Montserrat', sans-serif;
+    font-size:20px;
+    line-height:24px;
+    font-weight:600;
+    padding:5px;
+
+}
+
+/* Medium devices (landscape tablets, 600px and up) */
+@media only screen and (min-width: 590px) {  
+:root {
+    --card-width:255px;
+    --card-height:413px;
+}
+} 
+@media only screen and (max-width:670px) {
+:root{
+    --card-width:240px;
+    --card-height:388px;
+}
+.card-grid {grid-template-columns: auto;width:240px;}
+}
+/* Large devices (laptops/desktops, 843px and up) */
+@media only screen and (min-width: 1000px) {
+:root {
+    --card-width:232px;
+    --card-height:375px;
+}
+.card-grid {grid-template-columns: auto auto auto;}
+} 
+  
+/* Extra large devices (large laptops and desktops, 1100px and up) */
+@media only screen and (min-width: 1224px) {
+:root {
+    --card-width:304px;
+    --card-height:491px;
+}
+}

@@ -81,7 +81,7 @@ module.exports = function (eleventyConfig) {
 
   // CSS minifier
   eleventyConfig.addFilter('cssMin', css => {
-    return new CleanCSS({}).minify(code).styles;
+    return new CleanCSS({}).minify(css).styles;
   });
 
 
@@ -105,8 +105,8 @@ module.exports = function (eleventyConfig) {
       output: "public",
       includes: "_includes",
       layouts: "_layouts",
-      markdownTemplateEngine: "md"
     },
+    markdownTemplateEngine: "njk",
     cname: 'geowen.dev'
   };
 };

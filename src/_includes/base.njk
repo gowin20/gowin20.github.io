@@ -13,10 +13,10 @@
     {% include "style/sidebar.css" %}
   {% endset %}
   <style>
-    {{ css | safe }}
+    {{ css | cssMin | safe }}
   </style>
-
-  <title>{{ title }}</title>
+  {% from "name.njk" import myName %}
+  <title>{{ title + " | " + myName + ' Owen'}}</title>
 
 </head>
 <body>
