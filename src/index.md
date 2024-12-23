@@ -3,6 +3,8 @@ title: home
 layout: root-page.njk
 ---
 
+My name is Gwen.
+
 This domain hosts my blog and assorted web projects. For more photos of me, see [Instagram](https://www.instagram.com/gowinnnn/) 🌇.
 
 {% from "components/image-slideshow.njk" import imageCarousel %}
