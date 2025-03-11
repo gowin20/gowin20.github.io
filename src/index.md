@@ -3,7 +3,7 @@ title: home
 layout: root-page.njk
 ---
 
-My name is Gwen.
+My name is George Owen, also known as "Gwen".
 
 This domain hosts my blog and assorted web projects. For more photos of me, see [Instagram](https://www.instagram.com/gowinnnn/) 🌇.
 
@@ -22,17 +22,17 @@ This domain hosts my blog and assorted web projects. For more photos of me, see 
 
 # About me
 
-Hiiiii! My name is {{myName}}. I'm a creative person who enjoys writing, programming, design, music, etc. I'm currently employed with Esri building [technical documentation](https://developers.arcgis.com/documentation/) for ArcGIS products.
+Hi! I'm Gwen. I'm a creative person who enjoys writing, programming, design, music, etc. I'm currently employed with Esri building [technical documentation](https://developers.arcgis.com/documentation/) for ArcGIS products.
 
 I use any pronouns; ask me for my preferences.
 
 Some things I enjoy include:
 
-* designing websites
-* creating interactive art and maps
-* supporting queer musicians
-* doing my nails
-* exploring industrial sites
+* designing websites and apps
+* creating interactive art
+* listening to hyperpop and EDM
+* being in nature
+* learning about technical things
 
 If you want to talk then HMU on Discord, it's `@gowin`
 
