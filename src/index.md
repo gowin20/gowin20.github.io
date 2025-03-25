@@ -3,13 +3,13 @@ title: home
 layout: root-page.njk
 ---
 
-My name is George Owen, also known as "Gwen".
+My name is Gwen.
 
 This domain hosts my blog and assorted web projects. For more photos of me, see [Instagram](https://www.instagram.com/gowinnnn/) 🌇.
 
 {% from "components/image-slideshow.njk" import imageCarousel %}
 {% set images = [
-'gwen-rift.jpg',
+'3.24.25-portraits-02.jpg',
 'devsummit-2024.png',
 'go-graduation-stand.jpg',
 'rave-step.png',
