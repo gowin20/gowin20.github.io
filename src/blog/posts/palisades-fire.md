@@ -6,7 +6,7 @@ tags:
     - art
     - dystopia
 date: 2025-04-09
-image: palisades-fire/
+image: palisades-fire/palisades-fire-1.9.25-3.jpeg
 ---
 
 {% from "components/image-slideshow.njk" import imageCarousel %}
