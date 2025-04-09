@@ -7,7 +7,7 @@ My name is Gwen.
 
 This domain hosts my blog and assorted web projects. For more photos of me, see [Instagram](https://www.instagram.com/gowinnnn/) 🌇.
 
-{% from "components/image-slideshow.njk" import imageCarousel %}
+{% from "components/frontpage-image-slideshow.njk" import imageCarousel %}
 {% set images = [
 '3.24.25-portraits-02.jpg',
 'devsummit-2024.png',
