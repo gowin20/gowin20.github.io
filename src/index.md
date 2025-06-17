@@ -1,39 +1,32 @@
 ---
-title: home
 layout: root-page.njk
 ---
 
-My name is Gwen.
+This domain hosts my blog and assorted projects. To contact me:
+* *Business*: Email, `gowen@esri.com`
+* *Personal*: Discord, `@gowin`
 
-This domain hosts my blog and assorted web projects. For more photos of me, see [Instagram](https://www.instagram.com/gowinnnn/) 🌇.
+Other socials are below.
 
 {% from "components/frontpage-image-slideshow.njk" import imageCarousel %}
 {% set images = [
 '3.24.25-portraits-02.jpg',
-'devsummit-2024.png',
 'go-graduation-stand.jpg',
-'rave-step.png',
-'rave-420.jpg',
-'hike-friends.jpg'
+'astarion-karlach-5-10-25.jpg',
+'devsummit-2024.png',
 ]%}
 {{ imageCarousel('/images/frontpage/',images) }}
 
-{% from "name.njk" import myName %}
-
 # About me
 
-Hi! I'm Gwen. I'm a creative person who enjoys writing, programming, design, music, etc. I'm currently employed with Esri building [technical documentation](https://developers.arcgis.com/documentation/) for ArcGIS products.
+Hi! I'm George Owen, otherwise known as Gwen. I'm a creative person passionate about improving the world. I strive for kindness and excellence in everything I do.
 
-I use any pronouns; ask me for my preferences.
+I'm currently employed with Esri building [technical documentation](https://developers.arcgis.com/documentation/) for ArcGIS products. I'm the author of the ArcGIS "Security and authentication" guide, as well as the primary architect of most ArcGIS x open-source JavaScript integrations.
 
-Some things I enjoy include:
+Outside of work, I enjoy:
 
-* designing websites and apps
-* creating interactive art
-* listening to hyperpop and EDM
-* being in nature
-* learning about technical things
-
-If you want to talk then HMU on Discord, it's `@gowin`
-
-# Socials
+* Designing websites and apps
+* Solving tough technical problems
+* Organizing collaborations and group events
+* Playing board games, video games, and RPGs
+* Hiking and being in nature
