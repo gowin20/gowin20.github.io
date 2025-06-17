@@ -7,7 +7,7 @@ layout: root-page.njk
 
 [College resume](/images/resumes/GeorgeOwen_resume.pdf)
 
-A fancy ✨ updated resume ✨ is coming soon...
+An ✨ updated resume ✨ is coming soon...
 
 # Projects
 
