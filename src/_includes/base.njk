@@ -15,11 +15,9 @@
   <style>
     {{ css | cssMin | safe }}
   </style>
-  {% if title %}
-  <title>{{ title + " | Gwen"}}</title>
-  {% else %}
-  <title>Gwen</title>
-  {%endif %}
+  {% from "name.njk" import myName %}
+  <title>{{ title + " | " + myName + ' Owen'}}</title>
+
 </head>
 <body>
 <div class="org">
