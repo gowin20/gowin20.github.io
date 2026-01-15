@@ -11,10 +11,12 @@ An ✨ updated resume ✨ is coming soon...
 
 # Projects
 
-* [**Post-it wall**](http://wall.gowen.dev)
+* [Galleria IIIF](http://galleria.gowen.dev)
+
+* [MapLibre ArcGIS](https://github.com/Esri/maplibre-arcgis)
+
+* [Post-it wall](http://wall.gowen.dev)
 
 * [cobble.page](http://cobble.page)
 
 * [fractal SVG generator](/projects/fractal-svg/)
-
-* [meat grinder](/projects/meat-grinder) (lol)
