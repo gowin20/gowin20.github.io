@@ -3,18 +3,17 @@ title: home
 layout: root-page.njk
 ---
 
+💻 Web engineer 🗺️ GIS specialist 🖌️ Digital gallery manager 🖼️
+
 My name is Gwen.
 
 This domain hosts my blog and assorted web projects. For more photos of me, see [Instagram](https://www.instagram.com/gowinnnn/) 🌇.
 
 {% from "components/image-slideshow.njk" import imageCarousel %}
 {% set images = [
-'3.24.25-portraits-02.jpg',
+'uc-2025.jpg,
 'devsummit-2024.png',
-'go-graduation-stand.jpg',
-'rave-step.png',
-'rave-420.jpg',
-'hike-friends.jpg'
+'go-graduation-stand.jpg'
 ]%}
 {{ imageCarousel('/images/frontpage/',images) }}
 
@@ -22,18 +21,16 @@ This domain hosts my blog and assorted web projects. For more photos of me, see 
 
 # About me
 
-Hi! I'm Gwen. I'm a creative person who enjoys writing, programming, design, music, etc. I'm currently employed with Esri building [technical documentation](https://developers.arcgis.com/documentation/) for ArcGIS products.
+Hi! I'm Gwen. I'm currently employed with Esri building [technical documentation](https://developers.arcgis.com/documentation/) for ArcGIS products.
 
-I use any pronouns; ask me for my preferences.
+I'm passionate about:
 
-Some things I enjoy include:
+* 💻 Building websites
+* 🖼️ Creating interactive art
+* 🗺️ Cartography
+* 🧑‍🤝‍🧑 Community
 
-* designing websites and apps
-* creating interactive art
-* listening to hyperpop and EDM
-* being in nature
-* learning about technical things
+# Contact
 
-If you want to talk then HMU on Discord, it's `@gowin`
-
-# Socials
+- Discord: `@gowin`
+- Email: `gbo.owen@gmail.com`
