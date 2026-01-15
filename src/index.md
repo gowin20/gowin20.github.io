@@ -3,9 +3,9 @@ title: home
 layout: root-page.njk
 ---
 
-💻 Web engineer 🗺️ GIS specialist 🖌️ Digital gallery manager \🖼️
-
 My name is Gwen.
+
+Web engineer 💻 GIS specialist 🗺️ Digital gallery manager 🖌️🖼️
 
 This domain hosts my blog and assorted web projects. For more photos of me, see [Instagram](https://www.instagram.com/gowinnnn/) 🌇.
 
@@ -17,8 +17,6 @@ This domain hosts my blog and assorted web projects. For more photos of me, see 
 ] %}
 {{ imageCarousel('/images/frontpage/', images) }}
 
-{% from "name.njk" import myName %}
-
 # About me
 
 Hi! I'm Gwen. I'm currently employed with Esri building [technical documentation](https://developers.arcgis.com/documentation/) for ArcGIS products.
@@ -26,9 +24,9 @@ Hi! I'm Gwen. I'm currently employed with Esri building [technical documentation
 I'm passionate about:
 
 * 💻 Building websites
-* 🖼️ Creating interactive art
-* 🗺️ Cartography
-* 🧑‍🤝‍🧑 Community
+* ☝️ Creating interactive art
+* 🗺️ Designing maps
+* 🧑‍🤝‍🧑 Fostering community
 
 # Contact
 
