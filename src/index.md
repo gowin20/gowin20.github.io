@@ -3,7 +3,7 @@ title: home
 layout: root-page.njk
 ---
 
-💻 Web engineer 🗺️ GIS specialist 🖌️ Digital gallery manager 🖼️
+💻 Web engineer 🗺️ GIS specialist 🖌️ Digital gallery manager \🖼️
 
 My name is Gwen.
 
@@ -11,11 +11,11 @@ This domain hosts my blog and assorted web projects. For more photos of me, see 
 
 {% from "components/image-slideshow.njk" import imageCarousel %}
 {% set images = [
-'uc-2025.jpg,
-'devsummit-2024.png',
-'go-graduation-stand.jpg'
-]%}
-{{ imageCarousel('/images/frontpage/',images) }}
+    'uc-2025.jpg',
+    'devsummit-2024.png',
+    'go-graduation-stand.jpg'
+] %}
+{{ imageCarousel('/images/frontpage/', images) }}
 
 {% from "name.njk" import myName %}
 
