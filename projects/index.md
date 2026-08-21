@@ -11,6 +11,8 @@ An ✨ updated resume ✨ is coming soon...
 
 # Projects
 
+* [Autodesk x ArcGIS collaboration](https://gowen.dev/autodesk-and-arcgis-aec-viewer/)
+
 * [Galleria IIIF](http://galleria.gowen.dev)
 
 * [MapLibre ArcGIS](https://github.com/Esri/maplibre-arcgis)
