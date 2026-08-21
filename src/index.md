@@ -5,7 +5,7 @@ layout: root-page.njk
 
 # About me
 
-Hi, I'm George Owen - also known as Gwen. I'm a software engineer and developer evangelist Esri. I build ArcGIS products and I talk about them.
+Hi, I'm George Owen - also known as Gwen. I'm a software engineer and developer evangelist at Esri. I build ArcGIS products and I talk about them.
 
 I'm passionate about:
 
