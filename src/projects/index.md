@@ -11,7 +11,9 @@ An ✨ updated resume ✨ is coming soon...
 
 # Projects
 
-* [Autodesk x ArcGIS collaboration](https://gowen.dev/autodesk-and-arcgis-aec-viewer/)
+* [Agentic developer skills](https://github.com/gowin20/agent-skills)
+
+* [Autodesk x ArcGIS collaboration](./autodesk-university-2026)
 
 * [Galleria IIIF](http://galleria.gowen.dev)
 
