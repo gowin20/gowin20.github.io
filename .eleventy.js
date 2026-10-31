@@ -49,6 +49,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/images");
   eleventyConfig.addWatchTarget("./src/images/");
 
+  eleventyConfig.addPassthroughCopy("./src/videos");
+  eleventyConfig.addWatchTarget("./src/videos/");
+
   eleventyConfig.addPassthroughCopy("./src/projects");
   eleventyConfig.addWatchTarget("./src/projects/");
 

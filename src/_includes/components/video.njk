@@ -1,0 +1,22 @@
+{# _includes/components/video.njk #}
+{% macro videoPlayer(src, poster="", autoplay=false, controls=true, loop=false, muted=false, class="") %}
+  {# Check if src is relative or absolute. If relative, ensure it starts with a leading slash #}
+  {% set finalSrc = src %}
+  {% if not (src.startsWith('http://') or src.startsWith('https://')) and not src.startsWith('/') %}
+    {% set finalSrc = '/' + src %}
+  {% endif %}
+
+  <div class="video-wrapper {{ class }}">
+    <video 
+      src="{{ finalSrc }}"
+      {% if poster %} poster="{{ poster }}" {% endif %}
+      {% if controls %} controls {% endif %}
+      {% if autoplay %} autoplay {% endif %}
+      {% if loop %} loop {% endif %}
+      {% if muted or autoplay %} muted {% endif %}
+      preload="metadata"
+      playsinline>
+      <p>Your browser doesn't support HTML5 video. Here is a <a href="{{ finalSrc }}">link to the video</a> instead.</p>
+    </video>
+  </div>
+{% endmacro %}
